@@ -1,0 +1,13 @@
+## ----echo=FALSE, message=FALSE-------------------------------------------
+library("nclRshiny")
+library("shiny")
+library("flexdashboard")
+
+## ----eval=FALSE----------------------------------------------------------
+#  ## Arguments: id, code to execute on the server
+#  observeEvent(input$n, {print(input$n)})
+
+## ----eval=FALSE----------------------------------------------------------
+#  ## input$mean comes from a second slider
+#  rnorm(input$n, input$mean)
+

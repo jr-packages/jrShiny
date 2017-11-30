@@ -1,0 +1,43 @@
+---
+title: "Sparklines"
+author: "Jumping Rivers"
+css: "sparkline.css"
+output: html_vignette
+---
+<!--
+%\VignetteEngine{knitr::rmarkdown}
+%\VignetteIndexEntry{Introduction to Sparklines}
+-->  
+
+```{r echo=FALSE}
+library("htmlwidgets")
+library("sparkline")
+set.seed(3)
+x = signif(rnorm(10), 2)
+y = signif(rnorm(10), 2)
+```
+
+A sparkline is a very small line chart `r sparkline(cumsum(x))`. They are typically drawn without axes or coordinates.
+The graph presents the general shape of the variation (typically over time) in some
+measurement: `r sparkline(x, type = 'bar')`.  Sparklines are small enough to be
+embedded in text  `r sparkline(abs(x), type = 'bar')`. They are often included within tables
+
+Bar charts   negative values: 
+
+| Object | Sparkline         | Boxplot  
+|-------|-------------------|--------
+| `x`     | `r sparkline(x)`  | `r sparkline(x, type ='box')`
+| `y`     | `r sparkline(y)`  | `r sparkline(y, type ='box')`
+
+
+You can install the developmental version using
+
+```{r eval=FALSE}
+devtools::install_github("htmlwidgets/sparkline")
+```
+
+#### Further information
+
+ * Experimental R [package](https://github.com/htmlwidgets/sparkline)
+ * javascript [library](http://omnipotent.net/jquery.sparkline/)
+ * [Wikipedia](https://en.wikipedia.org/wiki/Sparkline) page

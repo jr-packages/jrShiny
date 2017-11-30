@@ -1,0 +1,64 @@
+---
+title: "Introduction to htmlwidgets"
+date: "`r Sys.Date()`"
+author: "Jumping Rivers"
+output: html_vignette
+---
+<!--
+%\VignetteEngine{knitr::rmarkdown}
+%\VignetteIndexEntry{Introduction to htmlwidgets}
+-->
+
+## Demo list
+
+To install (most of) the necessary packages to run the vignettes below, 
+
+  * Interactive Heat Maps: [d3heatmap](d3heatmap.html), [R](d3heatmap.R), [Rmd](d3heatmap.Rmd)
+  * Interactive tables: [DT](DT.html), [R](DT.R), [Rmd](DT.Rmd)
+  * Circle Plots with Bundled Edges: [edgebundleR](edgebundleR.html), [R](edgebundleR.R), [Rmd](edgebundleR.Rmd)
+  * Formattable Data Structures: [formattable](formattable.html), [R](formattable.R), [Rmd](formattable.Rmd)
+  * Interactive ggplot2 graphs: [ggiraph](ggiraph.html), [R](ggiraph.R), [Rmd](ggiraph.Rmd)
+  * Network graphs: [networkD3](networkD3.html), [R](networkD3.R), [Rmd](networkD3.Rmd)
+  * Add pan and zoom to graphics: [svgPanZoom](svgPanZoom.html), [R](svgPanZoom.R), [Rmd](svgPanZoom.Rmd)
+  * jQuery Sparkline HTML Widget:[sparkline](sparkline.html), [R](sparkline.R), [Rmd](sparkline.Rmd)
+  
+---
+
+### Other widgets
+
+  * [leaflet](https://cran.rstudio.com/web/packages/leaflet/) creates interactive map - [homepage](https://rstudio.github.io/leaflet/)
+  * [pairsD3](https://cran.rstudio.com/web/packages/pairsD3/): d3 Scatterplot Matrices - [demo](http://garthtarr.com/apps/pairsD3/)
+  * [rhandsontable](https://cran.rstudio.com/web/packages/rhandsontable/): Interface to the `Handsontable.js` Library; a minimalist Excel-like data grid editor - [examples](https://jrowen.github.io/rhandsontable/)
+  * [scatterD3](https://cran.rstudio.com/web/packages/scatterD3/): d3 JavaScript Scatterplot from R - [examples](https://data.nozav.org/app/scatterD3/)
+  * [threejs](https://cran.rstudio.com/web/packages/threejs/): Interactive 3D Scatter Plots, Networks and Globes - 
+  [examples](https://bwlewis.github.io/rthreejs/)
+  * [visNetwork](https://cran.rstudio.com/web/packages/visNetwork/): Network Visualization using `vis.js` Library - 
+  [examples](https://datastorm-open.github.io/visNetwork/)
+  
+#### Entire plotting frameworks
+
+The packages below link to very javascript frameworks (`plotly` is quite nice).
+  
+  * [plotly](https://cran.rstudio.com/web/packages/plotly/): Create Interactive Web Graphics via `plotly.js` - 
+  [examples](https://plot.ly/r/)
+  * [rAmCharts](https://cran.rstudio.com/web/packages/rAmCharts/): JavaScript Charts API Tool - 
+  [examples](https://datastorm-open.github.io/introduction_ramcharts/), [about](http://www.amcharts.com/about/)
+  * [rbokeh](https://cran.rstudio.com/web/packages/rbokeh/): R Interface for [Bokeh](https://hafen.github.io/rbokeh/)
+  * [highcharter](https://cran.rstudio.com/web/packages/highcharter/): A wrapper for the [Highcharts](http://www.highcharts.com/) library - [homepage](http://jkunst.com/highcharter/) 
+  * [Interface](https://cran.rstudio.com/web/packages/dygraphs) to the [dygraphs](http://dygraphs.com/) JavaScript charting library - [demos](https://rstudio.github.io/dygraphs/)
+  * [metricsgraphics](https://cran.rstudio.com/web/packages/metricsgraphics/) provides an `htmlwidgets` interface 
+    to the `MetricsGraphics.js` - [examples](https://hrbrmstr.github.io/metricsgraphics/)
+
+#### Niche widgets
+
+Interesting widgets, but aimed at a particular market.
+
+  * [DiagrammeR](https://cran.rstudio.com/web/packages/DiagrammeR/): Create graph diagrams and flowcharts using R
+  * [qtlcharts](https://cran.rstudio.com/web/packages/qtlcharts/): Interactive Graphics for QTL Experiments - 
+  [examples](http://kbroman.org/qtlcharts/)
+  * [radarchart](https://cran.rstudio.com/web/packages/radarchart/): Radar Chart from Chart.js
+  * [rchess](https://cran.rstudio.com/web/packages/rchess/): R package for chess validations!
+  * [treescape](https://cran.rstudio.com/web/packages/treescape/): Statistical Exploration of Landscapes of Phylogenetic Trees
+  
+  
+  

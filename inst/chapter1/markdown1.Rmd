@@ -1,0 +1,47 @@
+---
+title: "Chapter 1: Exercise 1"
+author: "Colin Gillespie"
+output:
+  html_document
+---
+
+## Instructions 
+
+For each line below:
+  
+  1. Format the line with markdown to display what the line describes.
+  2. Re-render the file by pressing the `Knit HTML` button above to see if it worked.
+  3. Move on to the next line.
+  
+The Markdown cheatsheet is available under the `Help` button in the top menu.
+***
+
+Use markdown to indicate:
+
+A first level header  
+A second level header  
+A third level header  
+A fourth level header  
+A fifth level header  
+A sixth level header  
+
+bold text  
+italic text
+
+An unordered list:  
+Item 1  
+Item 2  
+sub-item 1  
+sub-item 2  
+
+An ordered list:  
+Item 1  
+Item 2  
+sub-item 1  
+sub-item 2  
+
+A table:  
+Header 1 Header 2  
+Cell 1 Cell 2  
+Cell 3 Cell 4  
+

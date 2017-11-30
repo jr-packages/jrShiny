@@ -1,0 +1,45 @@
+---
+title: "Introduction to DT"
+date: "`r Sys.Date()`"
+author: "Jumping Rivers"
+output: html_vignette  
+---
+<!--
+%\VignetteEngine{knitr::rmarkdown}
+%\VignetteIndexEntry{Introduction to DT}
+-->
+  
+```{r message=FALSE, echo=FALSE}
+library("DT")
+```
+
+## Overview
+
+The `DT` package provides an R interface to the excellent DataTables JavaScript
+library. R objects, such as matrices or data frames, can be displayed as interactive
+tables on HTML pages. The `DT` provides filtering, pagination, sorting, and many other features in the
+tables.
+
+Install using
+
+```{r, eval=FALSE}
+install.packages("DT")
+```
+
+## Example
+
+You generate an interactive table on any data frame using the `datatable` function
+
+```{r}
+data(iris, package="datasets")
+datatable(iris)
+```
+
+#### Other information
+
+ * [CRAN](https://cran.rstudio.com/web/packages/DT/)
+ * [github](https://rstudio.github.io/DT/)
+ 
+```{r, echo=FALSE}
+rm(list=ls())
+```

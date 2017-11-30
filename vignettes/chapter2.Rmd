@@ -1,0 +1,55 @@
+---
+title: "Chapter 2 Exercises"
+author: "Jumping Rivers"
+output: html_vignette
+---
+<!--
+%\VignetteEngine{knitr::rmarkdown}
+%\VignetteIndexEntry{Chapter 2 Exercises}
+-->
+
+```{r echo=FALSE, message=FALSE}
+library("nclRshiny")
+library("flexdashboard")
+```
+
+## Exercise 1 (5 minutes)
+
+  * Briefly explore the [showcase](http://www.htmlwidgets.org/showcase_leaflet.html) htmlwidgets. 
+  * I've also deploy a simple [app](https://bookdown.org/csgillespie/components/) This is what we
+  hope to achieve by the end of chapter 3.
+
+## Exercise 2 (20 minutes)
+
+Go through the following widgets
+
+  * Interactive Heat Maps: [d3heatmap](d3heatmap.html), [R](d3heatmap.R), [Rmd](d3heatmap.Rmd)
+  * Interactive tables: [DT](DT.html), [R](DT.R), [Rmd](DT.Rmd)
+  * Circle Plots with Bundled Edges: [edgebundleR](edgebundleR.html), [R](edgebundleR.R), [Rmd](edgebundleR.Rmd)
+  * Formattable Data Structures: [formattable](formattable.html), [R](formattable.R), [Rmd](formattable.Rmd)
+  * Interactive ggplot2 graphs: [ggiraph](ggiraph.html), [R](ggiraph.R), [Rmd](ggiraph.Rmd)
+  * Network graphs: [networkD3](networkD3.html), [R](networkD3.R), [Rmd](networkD3.Rmd)
+  * Add pan and zoom to graphics: [svgPanZoom](svgPanZoom.html), [R](svgPanZoom.R), [Rmd](svgPanZoom.Rmd)
+  * jQuery Sparkline HTML Widget: [sparkline](sparkline.html), [R](sparkline.R), [Rmd](sparkline.Rmd)
+
+Experiment with a few of the widgets on your **own** data set.
+
+## Exercise 3 (20 minutes)
+
+Open the `htmlwidgets` vignette
+
+```{r eval=FALSE}
+vignette("htmlwidgets", package="nclRshiny")
+```
+
+Explore the **other widgets** on you own data. The `plotly` framework, under _Entire plotting frameworks_ is quite nice
+
+## Exercise 4 (10 minutes)
+
+Create:
+
+  * A markdown document containing your widgets;
+  * A markdown presentation containing your widgets.
+  
+  
+  

@@ -1,0 +1,57 @@
+---
+title: "Introduction to networkD3"
+date: "`r Sys.Date()`"
+author: "Jumping Rivers"
+output: html_vignette 
+---
+<!--
+%\VignetteEngine{knitr::rmarkdown}
+%\VignetteIndexEntry{Introduction to networkD3}
+-->
+
+## Overview
+
+The `networkD3` package allows you to create interactive 
+[force directed network](http://en.wikipedia.org/wiki/Force-directed_graph_drawing) graphics.
+The package can be installed using
+
+```{r eval=FALSE}
+install.packages("networkD3")
+```
+
+## Examples
+
+Simple force directed network graphics can be created using `simpleNetwork`:
+
+```{r message=FALSE}
+library(networkD3)
+networkData = data.frame(src=c("A", "A", "A", "A", "B", "B", "C", "C", "D"), 
+                          target=c("B", "C", "D", "J", "E", "F", "G", "H", "I"))
+simpleNetwork(networkData)
+```
+or use `forceNetwork` to have more control 
+```{r echo=FALSE}
+data(MisLinks, package="networkD3")
+data(MisNodes, package="networkD3")
+
+# Plot
+forceNetwork(Links = MisLinks, Nodes = MisNodes,
+            Source = "source", Target = "target",
+            Value = "value", NodeID = "name",
+            Group = "group", opacity = 0.8)
+```
+
+or [Sankey diagrams](http://en.wikipedia.org/wiki/Sankey_diagram)
+```{r echo=FALSE}
+data(Energy, package="nclRshiny")
+# Plot
+sankeyNetwork(Links = Energy$links, Nodes = Energy$nodes, Source = "source",
+             Target = "target", Value = "value", NodeID = "name",
+             units = "TWh", fontSize = 12, nodeWidth = 30)
+```
+
+
+#### Links
+
+  * Lots of [examples](https://christophergandrud.github.io/networkD3/)
+  * [CRAN](https://cran.rstudio.com/web/packages/networkD3/index.html)

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="Jumping Rivers" />
+
+<meta name="date" content="2017-06-21" />
+
+<title>Introduction to htmlwidgets</title>
+
+
+
+
+
+
+<link href="data:text/css;charset=utf-8,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23header%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%20code%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Introduction to htmlwidgets</h1>
+<h4 class="author"><em>Jumping Rivers</em></h4>
+<h4 class="date"><em>2017-06-21</em></h4>
+
+
+
+<!--
+%\VignetteEngine{knitr::rmarkdown}
+%\VignetteIndexEntry{Introduction to htmlwidgets}
+-->
+<div id="demo-list" class="section level2">
+<h2>Demo list</h2>
+<p>To install (most of) the necessary packages to run the vignettes below,</p>
+<ul>
+<li>Interactive Heat Maps: <a href="d3heatmap.html">d3heatmap</a>, <a href="d3heatmap.R">R</a>, <a href="d3heatmap.Rmd">Rmd</a></li>
+<li>Interactive tables: <a href="DT.html">DT</a>, <a href="DT.R">R</a>, <a href="DT.Rmd">Rmd</a></li>
+<li>Circle Plots with Bundled Edges: <a href="edgebundleR.html">edgebundleR</a>, <a href="edgebundleR.R">R</a>, <a href="edgebundleR.Rmd">Rmd</a></li>
+<li>Formattable Data Structures: <a href="formattable.html">formattable</a>, <a href="formattable.R">R</a>, <a href="formattable.Rmd">Rmd</a></li>
+<li>Interactive ggplot2 graphs: <a href="ggiraph.html">ggiraph</a>, <a href="ggiraph.R">R</a>, <a href="ggiraph.Rmd">Rmd</a></li>
+<li>Network graphs: <a href="networkD3.html">networkD3</a>, <a href="networkD3.R">R</a>, <a href="networkD3.Rmd">Rmd</a></li>
+<li>Add pan and zoom to graphics: <a href="svgPanZoom.html">svgPanZoom</a>, <a href="svgPanZoom.R">R</a>, <a href="svgPanZoom.Rmd">Rmd</a></li>
+<li>jQuery Sparkline HTML Widget:<a href="sparkline.html">sparkline</a>, <a href="sparkline.R">R</a>, <a href="sparkline.Rmd">Rmd</a></li>
+</ul>
+<hr />
+<div id="other-widgets" class="section level3">
+<h3>Other widgets</h3>
+<ul>
+<li><a href="https://cran.rstudio.com/web/packages/leaflet/">leaflet</a> creates interactive map - <a href="https://rstudio.github.io/leaflet/">homepage</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/pairsD3/">pairsD3</a>: d3 Scatterplot Matrices - <a href="http://garthtarr.com/apps/pairsD3/">demo</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/rhandsontable/">rhandsontable</a>: Interface to the <code>Handsontable.js</code> Library; a minimalist Excel-like data grid editor - <a href="https://jrowen.github.io/rhandsontable/">examples</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/scatterD3/">scatterD3</a>: d3 JavaScript Scatterplot from R - <a href="https://data.nozav.org/app/scatterD3/">examples</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/threejs/">threejs</a>: Interactive 3D Scatter Plots, Networks and Globes - <a href="https://bwlewis.github.io/rthreejs/">examples</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/visNetwork/">visNetwork</a>: Network Visualization using <code>vis.js</code> Library - <a href="https://datastorm-open.github.io/visNetwork/">examples</a></li>
+</ul>
+<div id="entire-plotting-frameworks" class="section level4">
+<h4>Entire plotting frameworks</h4>
+<p>The packages below link to very javascript frameworks (<code>plotly</code> is quite nice).</p>
+<ul>
+<li><a href="https://cran.rstudio.com/web/packages/plotly/">plotly</a>: Create Interactive Web Graphics via <code>plotly.js</code> - <a href="https://plot.ly/r/">examples</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/rAmCharts/">rAmCharts</a>: JavaScript Charts API Tool - <a href="https://datastorm-open.github.io/introduction_ramcharts/">examples</a>, <a href="http://www.amcharts.com/about/">about</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/rbokeh/">rbokeh</a>: R Interface for <a href="https://hafen.github.io/rbokeh/">Bokeh</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/highcharter/">highcharter</a>: A wrapper for the <a href="http://www.highcharts.com/">Highcharts</a> library - <a href="http://jkunst.com/highcharter/">homepage</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/dygraphs">Interface</a> to the <a href="http://dygraphs.com/">dygraphs</a> JavaScript charting library - <a href="https://rstudio.github.io/dygraphs/">demos</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/metricsgraphics/">metricsgraphics</a> provides an <code>htmlwidgets</code> interface to the <code>MetricsGraphics.js</code> - <a href="https://hrbrmstr.github.io/metricsgraphics/">examples</a></li>
+</ul>
+</div>
+<div id="niche-widgets" class="section level4">
+<h4>Niche widgets</h4>
+<p>Interesting widgets, but aimed at a particular market.</p>
+<ul>
+<li><a href="https://cran.rstudio.com/web/packages/DiagrammeR/">DiagrammeR</a>: Create graph diagrams and flowcharts using R</li>
+<li><a href="https://cran.rstudio.com/web/packages/qtlcharts/">qtlcharts</a>: Interactive Graphics for QTL Experiments - <a href="http://kbroman.org/qtlcharts/">examples</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/radarchart/">radarchart</a>: Radar Chart from Chart.js</li>
+<li><a href="https://cran.rstudio.com/web/packages/rchess/">rchess</a>: R package for chess validations!</li>
+<li><a href="https://cran.rstudio.com/web/packages/treescape/">treescape</a>: Statistical Exploration of Landscapes of Phylogenetic Trees</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

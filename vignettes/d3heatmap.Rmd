@@ -1,0 +1,52 @@
+---
+title: "Introduction to d3heatmap"
+date: "`r Sys.Date()`"
+author: "Jumping Rivers"
+output: html_vignette  
+---
+<!--
+%\VignetteEngine{knitr::rmarkdown}
+%\VignetteIndexEntry{Introduction to d3heatmap}
+-->
+
+```{r message=FALSE, echo=FALSE}
+library("d3heatmap")
+```
+
+## Overview
+
+The `d3heatmap`package implements a heatmap htmlwidget. It allows you to
+
+  * Highlight rows/columns by clicking axis labels;
+  * Click and drag over colormap to zoom in (click on colormap to zoom out);
+  * Optional clustering and dendrograms.
+
+Install using
+
+```{r, eval=FALSE}
+install.packages("d3heatmap")
+```
+
+### Example: mtcars 
+
+```{r, echo=FALSE, message=FALSE}
+data(mtcars, package="datasets")
+x = mtcars 
+#d3heatmap(x, k_row = 4, k_col = 2)
+d3heatmap(x, k_row = 4, k_col = 2, scale = "column") # a more appropriate scalling
+```
+
+We can also look at the correlation between the measures:
+
+```{r, echo=FALSE}
+d3heatmap(cor(x), k_row = 3, k_col = 3)
+```
+
+
+#### Further information
+
+ * Github [page](https://github.com/rstudio/d3heatmap)
+ * [CRAN](https://cran.rstudio.com/web/packages/d3heatmap/)
+ 
+ 
+ 
