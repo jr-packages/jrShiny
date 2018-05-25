@@ -1,5 +1,5 @@
 ## ----echo=FALSE, message=FALSE-------------------------------------------
-library("nclRshiny")
+library("jrShiny")
 
 ## ----eval=FALSE----------------------------------------------------------
 #  ## Hope this should work!

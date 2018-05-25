@@ -7,7 +7,7 @@ source_code: embed
 
 ```{r echo=FALSE}
 library(ggplot2movies)
-library(nclRshiny)
+library(jrShiny)
 movies = movies[!is.na(movies$budget) & movies$budget > 0,]
 ```
 

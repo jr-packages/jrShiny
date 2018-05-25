@@ -1,5 +1,5 @@
 ## ----echo=FALSE, message=FALSE-------------------------------------------
-library("nclRshiny")
+library("jrShiny")
 library("flexdashboard")
 
 ## ----echo=FALSE, fig.height=2, fig.width=2-------------------------------
@@ -30,5 +30,5 @@ layout(matrix(c(1, 1, 2, 4,
 layout_show(7,1)
 
 ## ----eval=FALSE----------------------------------------------------------
-#  vignette("components", package="nclRshiny")
+#  vignette("components", package="jrShiny")
 

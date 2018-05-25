@@ -4,8 +4,8 @@
 ## The app would be run using runApp()
 
 library("shiny")
-library("nclRshiny")
-data(movies, package="nclRshiny")
+library("jrShiny")
+data(movies, package="jrShiny")
 
 ui = fluidPage(
   titlePanel("I love movies"), 

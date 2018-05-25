@@ -1,7 +1,7 @@
 ## ----echo=FALSE, message=FALSE-------------------------------------------
-library("nclRshiny")
+library("jrShiny")
 library("flexdashboard")
 
 ## ----eval=FALSE----------------------------------------------------------
-#  vignette("htmlwidgets", package="nclRshiny")
+#  vignette("htmlwidgets", package="jrShiny")
 

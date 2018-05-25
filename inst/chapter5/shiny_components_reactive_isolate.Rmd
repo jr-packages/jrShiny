@@ -19,7 +19,7 @@ setnicepar = function(mar=c(3,3,2,1),
 ```{r setup}
 library(shiny)
 library(flexdashboard)
-#library(nclRshiny)
+#library(jrShiny)
 library("ggplot2movies")
 library(ggplot2)
 library(flexdashboard)

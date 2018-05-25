@@ -20,8 +20,8 @@ plot_ly(d, x = ~carat, y = ~price, text = ~paste("Clarity: ", clarity),
         mode = "markers", color = ~carat, size = ~carat)
 
 ## ----eval=FALSE----------------------------------------------------------
-#  vignette("chapter2", package="nclRshiny")
+#  vignette("chapter2", package="jrShiny")
 
 ## ----eval=FALSE----------------------------------------------------------
-#  vignette("chapter2", package="nclRshiny")
+#  vignette("chapter2", package="jrShiny")
 

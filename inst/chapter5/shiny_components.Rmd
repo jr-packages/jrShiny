@@ -15,10 +15,10 @@ library("flexdashboard")
 library("ggplot2")
 
 ## Teaching package from: www.ncl.ac.uk/maths/rcourse/details.html
-## install.packages("nclRshiny", repos="http://rcourses.github.io/drat/")
+## install.packages("jrShiny", repos="http://rcourses.github.io/drat/")
 
 ## Subset of the ggplot2movies data set
-data(movies, package="nclRshiny")
+data(movies, package="jrShiny")
 top_movies = movies[order(-movies$rating), 
                     c("title", "year", "budget", "rating", "Romance", "Action", "Animation"), ]
 colnames(top_movies) = c("Title", "Year", "Budget", "Rating","Romance", "Action", "Animation")
@@ -71,7 +71,7 @@ Base graphics
 ```{r}
 renderPlot({
   an = movies[movies[input$movie_type]==1,]
-  nclRshiny::setnicepar() 
+  jrShiny::setnicepar() 
   plot(an$rating, an$length, ylab="Length", xlab="Rating", 
        pch=21, bg="steelblue", ylim=c(0, max(an$length)), 
        xlim=c(1, 10), main=paste0(input$movie_type, " movies"))
@@ -84,7 +84,7 @@ renderPlot({
 ```{r}
 renderPlot({
   an = movies[movies[input$movie_type]==1,]
-  nclRshiny::setnicepar()
+  jrShiny::setnicepar()
   hist(an$length, breaks="fd", col="steelblue", xlab="Movie Length", 
        main="Histogram of movie length", xlim=c(0, max(an$length)))
   grid()

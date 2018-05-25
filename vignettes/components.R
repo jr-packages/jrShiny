@@ -1,6 +1,6 @@
 ## ----setup, include=FALSE------------------------------------------------
 library(flexdashboard)
-library(nclRshiny)
+library(jrShiny)
 library("ggplot2movies")
 library(ggplot2)
 library(flexdashboard)

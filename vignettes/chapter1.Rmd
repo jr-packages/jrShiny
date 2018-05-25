@@ -9,14 +9,14 @@ output: html_vignette
 -->
   
 ```{r echo=FALSE, message=FALSE}
-library("nclRshiny")
+library("jrShiny")
 ```
 
 ## Exercise 1 (8 minutes)
 
   * In RStudio, select `File`, then `New Project`. Create a new RStudio project in 
   an empty directory.
-  * Run the command `nclRshiny::create_project()`. This should create two directories: `original`
+  * Run the command `jrShiny::create_project()`. This should create two directories: `original`
   and `exercises`.
   * Open `exercises/chapter1/rmarkdown1.Rmd`. Click `Knit HTML`
   * Complete the instructions in the file

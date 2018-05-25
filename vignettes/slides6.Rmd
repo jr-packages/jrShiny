@@ -37,7 +37,7 @@ output: ioslides_presentation
 ## Exercise dynamic user interfaces
 
 ```{r,eval = FALSE}
-vignette("chapter6",package = "nclRshiny")
+vignette("chapter6",package = "jrShiny")
 ```
 
 # shinyjs

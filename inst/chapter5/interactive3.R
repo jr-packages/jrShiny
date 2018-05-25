@@ -1,5 +1,5 @@
 library("shiny")
-library("nclRshiny")
+library("jrShiny")
 
 ## Basic layout. Two regions.
 ui = basicPage(

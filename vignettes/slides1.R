@@ -1,20 +1,20 @@
 ## ----eval=FALSE----------------------------------------------------------
 #  install.packages("drat")
 #  drat::addRepo("rcourses")
-#  install.packages("nclRshiny")
-#  library("nclRshiny")## Should work
+#  install.packages("jrShiny")
+#  library("jrShiny")## Should work
 
 ## ----eval=FALSE----------------------------------------------------------
-#  install.packages("nclRshiny", dependencies = TRUE)
+#  install.packages("jrShiny", dependencies = TRUE)
 
 ## ----eval=FALSE----------------------------------------------------------
-#  vignettes("slides1", package="nclRshiny")
+#  vignettes("slides1", package="jrShiny")
 
 ## ----eval=FALSE----------------------------------------------------------
-#  vignettes("chapter1", package="nclRshiny")
+#  vignettes("chapter1", package="jrShiny")
 
 ## ----eval=FALSE----------------------------------------------------------
-#  vignette("chapter1", package="nclRshiny")
+#  vignette("chapter1", package="jrShiny")
 
 ## ----echo=FALSE----------------------------------------------------------
 knitr::include_graphics("graphics/knit-logo.png")
@@ -23,8 +23,8 @@ knitr::include_graphics("graphics/knit-logo.png")
 #  rmarkdown::render("file.Rmd")
 
 ## ----eval=FALSE----------------------------------------------------------
-#  vignette("chapter1", package="nclRshiny")
+#  vignette("chapter1", package="jrShiny")
 
 ## ----eval=FALSE----------------------------------------------------------
-#  vignette("chapter1", package="nclRshiny")
+#  vignette("chapter1", package="jrShiny")
 

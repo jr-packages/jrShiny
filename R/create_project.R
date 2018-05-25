@@ -2,12 +2,12 @@ move_files = function(chapter, dest) {
   ## Create chapter directory
   chapter = paste0("chapter", chapter)
   dir.create(file.path(dest, chapter), showWarnings = FALSE)
-  path = system.file(chapter, package = "nclRshiny")
+  path = system.file(chapter, package = "jrShiny")
   fnames = list.files(path, full.names = TRUE)
   file.copy(fnames,file.path(dest, chapter))
   
   ## Copy vignette
-  path = system.file("doc", package = "nclRshiny")
+  path = system.file("doc", package = "jrShiny")
   file.copy(file.path(path, paste0(chapter, ".Rmd")), dest)
   
 }

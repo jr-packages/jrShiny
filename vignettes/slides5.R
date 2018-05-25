@@ -14,7 +14,7 @@ fluidPage(
 )
 
 ## ----echo=FALSE, message=FALSE-------------------------------------------
-library(nclRshiny)
+library(jrShiny)
 layout(matrix(1:2, 1), width=c(1, 3))
 layout_show(2, text=c("Side bar", "Chart"), cex=1.5)
 text(0.1, 1, "Shiny Happy people")
@@ -32,7 +32,7 @@ function(input, output) {
 }
 
 ## ----eval=FALSE----------------------------------------------------------
-#  vignette("chapter5", package="nclRshiny")
+#  vignette("chapter5", package="jrShiny")
 
 ## ----eval=FALSE----------------------------------------------------------
 #  library("shiny")
@@ -87,7 +87,7 @@ ui = fluidPage(
 #  )
 
 ## ---- eval = FALSE-------------------------------------------------------
-#  vignette("chapter5",package = "nclRshiny")
+#  vignette("chapter5",package = "jrShiny")
 
 ## ----results="hide"------------------------------------------------------
 library("shiny")

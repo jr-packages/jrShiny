@@ -4,7 +4,7 @@ deploy:
 	Rscript -e 'deployApp("vignettes/shiny_components_reactive.Rmd", account="csgillespie")'
 
 install:
-	R CMD INSTALL ../nclRshiny_*.tar.gz
+	R CMD INSTALL ../jrShiny_*.tar.gz
 
 clean:
 	cd vignettes && rm -fv *.R *.html tmp* Rplots*.pdf && rm -fvr rsconnect

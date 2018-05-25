@@ -1,3 +1,3 @@
 ## ----eval = FALSE--------------------------------------------------------
-#  vignette("chapter6",package = "nclRshiny")
+#  vignette("chapter6",package = "jrShiny")
 

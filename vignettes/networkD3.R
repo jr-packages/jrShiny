@@ -18,7 +18,7 @@ forceNetwork(Links = MisLinks, Nodes = MisNodes,
             Group = "group", opacity = 0.8)
 
 ## ----echo=FALSE----------------------------------------------------------
-data(Energy, package="nclRshiny")
+data(Energy, package="jrShiny")
 # Plot
 sankeyNetwork(Links = Energy$links, Nodes = Energy$nodes, Source = "source",
              Target = "target", Value = "value", NodeID = "name",

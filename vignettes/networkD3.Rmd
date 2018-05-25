@@ -43,7 +43,7 @@ forceNetwork(Links = MisLinks, Nodes = MisNodes,
 
 or [Sankey diagrams](http://en.wikipedia.org/wiki/Sankey_diagram)
 ```{r echo=FALSE}
-data(Energy, package="nclRshiny")
+data(Energy, package="jrShiny")
 # Plot
 sankeyNetwork(Links = Energy$links, Nodes = Energy$nodes, Source = "source",
              Target = "target", Value = "value", NodeID = "name",

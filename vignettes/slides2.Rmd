@@ -55,7 +55,7 @@ Using an existing R html widgets requires very little code.
 # Exercise 1
 ## Exercise 1
 ```{r eval=FALSE}
-vignette("chapter2", package="nclRshiny")
+vignette("chapter2", package="jrShiny")
 ```
 
 # Creating widgets
@@ -69,7 +69,7 @@ vignette("chapter2", package="nclRshiny")
 # Exercise 2
 ## Exercise 2
 ```{r eval=FALSE}
-vignette("chapter2", package="nclRshiny")
+vignette("chapter2", package="jrShiny")
 ```
 
 

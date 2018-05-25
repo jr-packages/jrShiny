@@ -9,7 +9,7 @@ output: html_vignette
 -->
 
 ```{r echo=FALSE, message=FALSE}
-library("nclRshiny")
+library("jrShiny")
 library("flexdashboard")
 ```
 
@@ -39,7 +39,7 @@ Experiment with a few of the widgets on your **own** data set.
 Open the `htmlwidgets` vignette
 
 ```{r eval=FALSE}
-vignette("htmlwidgets", package="nclRshiny")
+vignette("htmlwidgets", package="jrShiny")
 ```
 
 Explore the **other widgets** on you own data. The `plotly` framework, under _Entire plotting frameworks_ is quite nice
