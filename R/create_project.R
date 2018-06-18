@@ -6,9 +6,9 @@ move_files = function(chapter, dest) {
   fnames = list.files(path, full.names = TRUE)
   file.copy(fnames,file.path(dest, chapter))
   
-  ## Copy vignette
-  path = system.file("doc", package = "jrShiny")
-  file.copy(file.path(path, paste0(chapter, ".Rmd")), dest)
+  ## Copy vignette, doesn't work
+  #path = system.file("doc", package = "jrShiny")
+  #file.copy(file.path(path, paste0(chapter, ".Rmd")), dest)
   
 }
 
