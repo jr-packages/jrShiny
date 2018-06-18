@@ -1,12 +1,12 @@
 ---
-title: "Chapter 5 Exercises"
+title: "Chapter 2 Exercises"
 date: "`r Sys.Date()`"
 author: "Jumping Rivers"
 output: html_vignette
 ---
 <!--
 %\VignetteEngine{knitr::rmarkdown}
-%\VignetteIndexEntry{Chapter 5 Exercises}
+%\VignetteIndexEntry{Chapter 2 Exercises}
 -->
 
 ## Exercise Layouts

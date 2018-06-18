@@ -1,11 +1,11 @@
 ---
-title: "Chapter 4 Exercises"
+title: "Chapter 1 Exercises"
 author: "Jumping Rivers"
 output: html_vignette
 ---
 <!--
 %\VignetteEngine{knitr::rmarkdown}
-%\VignetteIndexEntry{Chapter 4 Exercises}
+%\VignetteIndexEntry{Chapter 1 Exercises}
 -->
 
 ```{r echo=FALSE, message=FALSE}
