@@ -1,55 +1,96 @@
 ---
-title: "Chapter 2 Exercises"
+title: "Chapter 5 Exercises"
+date: "`r Sys.Date()`"
 author: "Jumping Rivers"
 output: html_vignette
 ---
 <!--
 %\VignetteEngine{knitr::rmarkdown}
-%\VignetteIndexEntry{Chapter 2 Exercises}
+%\VignetteIndexEntry{Chapter 5 Exercises}
 -->
 
-```{r echo=FALSE, message=FALSE}
-library("jrShiny")
-library("flexdashboard")
-```
+## Exercise Layouts
 
-## Exercise 1 (5 minutes)
+  * Open `chapter2/layout_app1.R` and run.
+  * Add a new tab to the output
+    * Let this new tab show a table of two variables, `length` and `rating`.
+    * Try making this an interactive table using `DT::datatable`.
+    * Make sure to remember to use the right `render*` and `*Output` functions.
 
-  * Briefly explore the [showcase](http://www.htmlwidgets.org/showcase_leaflet.html) htmlwidgets. 
-  * I've also deploy a simple [app](https://bookdown.org/csgillespie/components/) This is what we
-  hope to achieve by the end of chapter 3.
+A second exerise using the `navbarPage` function
 
-## Exercise 2 (20 minutes)
+  * Open `chapter2/layout_app2.R` and run
+  * Add a new page to the output
+    * Let this new tab show a table of two variables, `length` and `rating`.
+    * Try making this an interactive table using `DT::datatable`.
+  * Try using `navbarMenu` to create a dropdown menu that combines both the summary page and your new tab.
+  * If you wanted you could also try to create something that allows different input data to be shown within each tab
 
-Go through the following widgets
 
-  * Interactive Heat Maps: [d3heatmap](d3heatmap.html), [R](d3heatmap.R), [Rmd](d3heatmap.Rmd)
-  * Interactive tables: [DT](DT.html), [R](DT.R), [Rmd](DT.Rmd)
-  * Circle Plots with Bundled Edges: [edgebundleR](edgebundleR.html), [R](edgebundleR.R), [Rmd](edgebundleR.Rmd)
-  * Formattable Data Structures: [formattable](formattable.html), [R](formattable.R), [Rmd](formattable.Rmd)
-  * Interactive ggplot2 graphs: [ggiraph](ggiraph.html), [R](ggiraph.R), [Rmd](ggiraph.Rmd)
-  * Network graphs: [networkD3](networkD3.html), [R](networkD3.R), [Rmd](networkD3.Rmd)
-  * Add pan and zoom to graphics: [svgPanZoom](svgPanZoom.html), [R](svgPanZoom.R), [Rmd](svgPanZoom.Rmd)
-  * jQuery Sparkline HTML Widget: [sparkline](sparkline.html), [R](sparkline.R), [Rmd](sparkline.Rmd)
+## Exercise Dashboards
 
-Experiment with a few of the widgets on your **own** data set.
+  * Open `chapter2/dashboard_app1.R` and run.
+  * The app currently shows a list of available functions from the `shinydashboard` package.
+  * Use the available functions to create a new tab which plots `length` against `rating` for the `movies` data.
+  * Add a value box that shows the number of movies that are longer than 4 hours.
+  * Experiment with changing icons for your tabs and boxes.
 
-## Exercise 3 (20 minutes)
+## Exercise 1
 
-Open the `htmlwidgets` vignette
+  * Open `chapter2/shiny_app1.R` and run.
+  * Create a new directory, with two files: `ui.R` and `server.R`
+    * Move the ui section of the app to `ui.R` 
+    * Move the server section of the app to `server.R`
+    * Rerun the app via these new files.
+  * Change the scatter plot to a histogram of movie lengths.
 
-```{r eval=FALSE}
-vignette("htmlwidgets", package="jrShiny")
-```
+## Exercise 2
 
-Explore the **other widgets** on you own data. The `plotly` framework, under _Entire plotting frameworks_ is quite nice
+  * Open `chapter2/shiny_app2.R` and run. Experiment with the columns widths.
+    * You can move columns to the right by adding the `offset` parameter to the `column()` function, e.g. ` column(4, offset=1, ...)`
+  * Reproduce
+    
+    ```{r echo=FALSE, message=FALSE, fig.height=4, fig.width=4}
+    library(jrShiny)
+    layout(matrix(c(1, 1, 1, 0, 2, 0), 2, 3, byrow = TRUE), heights=c(8, 4))
+    layout_show(2, text=c("Plot", "Drop down"))  
+    ```
+    Hint: You will need to use the `offset` argument
 
-## Exercise 4 (10 minutes)
-
-Create:
-
-  * A markdown document containing your widgets;
-  * A markdown presentation containing your widgets.
+  * Reproduce
   
-  
+    ```{r echo=FALSE, message=FALSE, fig.height=4, fig.width=4}
+    library("jrShiny")
+    layout(matrix(c(0, 1, 1, 1, 1, 1,0,
+                    0, 0, 2, 2, 2, 0, 0), 2, 7, byrow = T), heights=c(8, 4))
+    layout_show(2, text=c("Plot", "Drop down"))  
+    ```
+    Hint: You will need to use the `offset` argument and two `fluidRow`
+
+## Exercise 3: interactive graphics
+
+  * Open `chapter2/interactive1.R` and run.
+    * Change the output to display `x` and `y` to 4 significant figures.
+    * If you are familiar with `ggplot2`, change the base graphic plot to a ggplot2 scatter plot. 
+    * Change the plot to a boxplot - does it still work
+  * Open `chapter2/interactive2.R` and run. Explore the other types of point selection.
+
+## Exercise 4: acting on interactive graphics
+
+  * Open `chapter2/interactive3.R` and run.
+  * In the `nearPoints` function, what does
+    * the argument `maxpoints=1` do?
+    * the argument `allRows=TRUE` do?
+  * On the scatter plot, add a line of best fit using the `lm` function
+    * When you click on a point, remove that point from the regression calculation and
+    refit the line.
+    * Add a reset button to you app
+    * Rather than clicking on a point, try brushing - selecting multiple, and altering the line.
+
+## Exercise 5: invalidating reactive contexts
+
+  * Open `chapter2/invalidate.R` and  run.
+  * Can you change the app such that it produces a plot of movie ratings vs lengths from a random sample of movies that changes every 5 seconds
+  * Create a summary output of movie years, let this be it's own reactive context updating every 3 seconds from a random sample of movies.
+  * __Hard:__ Create a summary output of movie years, let this be it's own reactive context updating every 3 seconds by cycling through the movie genres.
   
