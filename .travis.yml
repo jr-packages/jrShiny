@@ -11,6 +11,8 @@ r_packages:
 
 before_install:
   - tlmgr install fancyvrb units
+  - sudo apt-get update
+  - sudo apt-get install -y libpng-dev
 
 #before_script:
 #  - make
