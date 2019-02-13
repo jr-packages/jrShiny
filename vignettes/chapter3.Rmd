@@ -11,10 +11,10 @@ output: html_vignette
 
 These are less guided exercises. The files below will give you some example code that you can play around with and modify to see what is going on. Feel free to try things with your own data.
 
-## Dynamic user interfaces
+## Exercise 1: Dynamic user interfaces
 
   * Open `chapter3/ui_app1` and run
   
-## Tags
+## Exercise 2: Tags
 
   * Open `chapter3/tags.R` and run
