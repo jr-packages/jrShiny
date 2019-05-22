@@ -11,6 +11,7 @@ output: html_vignette
   
 ```{r message=FALSE, echo=FALSE}
 library("ggiraph")
+library("ggplot2")
 gg_th <- theme(axis.ticks = element_line(colour = "gray90"), 
     panel.grid.major = element_line(colour = "gray90"), 
     panel.grid.minor = element_line(colour = "transparent"), 
