@@ -20,4 +20,4 @@ License: CC0
 LazyData: TRUE
 VignetteBuilder: knitr
 Repository: jr-packages
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
