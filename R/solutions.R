@@ -10,9 +10,7 @@
 #' @export
 solution = function(number = 1) {
   if (!(number %in% 1:20)) stop("Unrecognized solution number")
-  
   filename = paste0("exercise", number, ".Rmd")
-  
   path = system.file("solutions", filename, package = "nclRexercises")
   newpath = file.path(getwd(), filename)
   file.copy(path, newpath, copy.mode = FALSE)

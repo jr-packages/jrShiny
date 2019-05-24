@@ -1,7 +1,7 @@
 library(shiny)
 library(shinydashboard)
 library(jrShiny)
-data("movies",package = "jrShiny")
+data("movies", package = "jrShiny")
 
 mycss <- "
 .info-box:hover,
@@ -38,20 +38,18 @@ ui = dashboardPage(
     tabItems(
       tabItem("overview",
               fluidRow(
-                column(4,radioButtons("genre", "Movie Genre", 
-                                      choices = c("Romance","Action","Comedy"))),
-                
-                  withPopup(infoBox("N",textOutput("nbox"))," films in this category")
-                  
+                column(4, radioButtons("genre", "Movie Genre",
+                                      choices = c("Romance", "Action", "Comedy"))),
+                  withPopup(infoBox("N", textOutput("nbox")), " films in this category")
               )
       )
     )
   )
 )
 
-server = function(input,output){
+server = function(input, output){
  output$nbox = renderText({
-   nrow(movies[movies[input$genre]==1,])
+   nrow(movies[movies[input$genre] == 1, ])
  })
 }
 

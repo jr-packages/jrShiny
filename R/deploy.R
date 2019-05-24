@@ -3,9 +3,8 @@
 ## Not exported
 #' @importFrom drat addRepo
 deploy = function(fname) {
-  if(!file.exists(fname)) stop("File does not exist")
+  if (!file.exists(fname)) stop("File does not exist")
   drat::addRepo("rcourses")
   rsconnect::deployApp(fname,
-                       account="csgillespie")
+                       account = "csgillespie")
 }
-

@@ -10,15 +10,17 @@ ui = dashboardPage(
   ),
   dashboardBody(
     tabItems(
-      tabItem("tab1",{
+      tabItem("tab1", {
         tableOutput("shinydash")
       })
     )
   )
 )
 
-server = function(input,output){
-  output$shinydash = renderTable(data.frame(getNamespaceExports("shinydashboard")))
+server = function(input, output){
+  output$shinydash = renderTable(
+    data.frame(getNamespaceExports("shinydashboard"))
+    )
 }
 
-runApp(list(ui=ui, server=server))
+runApp(list(ui = ui, server = server))

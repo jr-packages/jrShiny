@@ -2,9 +2,9 @@
 
 library("shiny")
 library("jrShiny")
-data(movies, package="jrShiny")
+data(movies, package = "jrShiny")
 # pick out a subset of data to play with
-movies = movies[,c("Romance","Action","length","rating")]
+movies = movies[, c("Romance", "Action", "length", "rating")]
 
 ui = fluidPage(
   titlePanel("Tabsets"),
@@ -24,17 +24,17 @@ ui = fluidPage(
 )
 
 
-server = function(input,output){
+server = function(input, output){
   dat = reactive({
-    movies[movies[input$movie_type]==1,]
+    movies[movies[input$movie_type] == 1, ]
   })
   output$scatter = renderPlot({
     an = dat()
-    plot(an$rating, an$length, ylab="Length", xlab="Rating", 
-         pch=21, bg="steelblue", ylim=c(0, max(an$length)), 
-         xlim=c(1, 10), main=paste0(input$movie_type, " movies"))
+    plot(an$rating, an$length, ylab = "Length", xlab = "Rating",
+         pch = 21, bg = "steelblue", ylim = c(0, max(an$length)),
+         xlim = c(1, 10), main = paste0(input$movie_type, " movies"))
   })
-  output$summary = renderPrint(summary(dat()[,c("length","rating")]))
+  output$summary = renderPrint(summary(dat()[, c("length", "rating")]))
 }
 
-runApp(list(ui=ui, server=server))
+runApp(list(ui = ui, server = server))

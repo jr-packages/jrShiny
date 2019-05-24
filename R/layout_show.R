@@ -6,9 +6,8 @@
 #' @param text Text to print
 #' @importFrom graphics box plot.new text
 #' @export
-layout_show = function (n = 1, cex=1, text = NULL) 
-{
-  if(is.null(text)) text = paste0("Chart ", seq_len(n))
+layout_show = function (n = 1, cex=1, text = NULL){
+  if (is.null(text)) text = paste0("Chart ", seq_len(n))
   oma.saved <- par("oma")
   par(oma = rep.int(0, 4))
   par(oma = oma.saved)

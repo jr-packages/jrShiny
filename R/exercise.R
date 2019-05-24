@@ -18,5 +18,4 @@ exercise = function(chapter, fname) {
   newpath = file.path(getwd(), fname)
   file.copy(path, newpath, copy.mode = FALSE)
   file.edit(newpath)
-  
-}
+  }

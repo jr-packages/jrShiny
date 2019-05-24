@@ -8,25 +8,26 @@ ui = navbarPage("Using navbar",
            # each tab can have it's own layout
            sidebarLayout(
              sidebarPanel(
-               radioButtons("movie_type", label = "Movie genre", c("Romance", "Action"))
+               radioButtons("movie_type",
+                            label = "Movie genre", c("Romance", "Action"))
                ),
              mainPanel(plotOutput("scatter"))
            )
   ),
-  tabPanel("Summary",verbatimTextOutput("summary"))
+  tabPanel("Summary", verbatimTextOutput("summary"))
 )
 
-server = function(input,output){
+server = function(input, output){
   dat = reactive({
-    movies[movies[input$movie_type]==1,]
+    movies[movies[input$movie_type] == 1, ]
   })
   output$scatter = renderPlot({
     an = dat()
-    plot(an$rating, an$length, ylab="Length", xlab="Rating", 
-         pch=21, bg="steelblue", ylim=c(0, max(an$length)), 
-         xlim=c(1, 10), main=paste0(input$movie_type, " movies"))
+    plot(an$rating, an$length, ylab = "Length", xlab = "Rating",
+         pch = 21, bg = "steelblue", ylim = c(0, max(an$length)),
+         xlim = c(1, 10), main = paste0(input$movie_type, " movies"))
   })
-  output$summary = renderPrint(summary(dat()[,c("length","rating")]))
+  output$summary = renderPrint(summary(dat()[, c("length", "rating")]))
 }
 
-runApp(list(ui=ui, server=server))
+runApp(list(ui = ui, server = server))

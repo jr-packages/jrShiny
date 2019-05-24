@@ -5,11 +5,11 @@
 
 library("shiny")
 library("jrShiny")
-data(movies, package="jrShiny")
+data(movies, package = "jrShiny")
 ui = fluidPage(
   titlePanel("I love movies"), #title
   ## Sidebar with a slider input for no. of points
-  sidebarLayout( 
+  sidebarLayout(
     sidebarPanel(
       selectInput("movie_type", label = "Movie genre", c("Romance", "Action", "Animation"))
     ),
@@ -20,14 +20,13 @@ ui = fluidPage(
 
 server = function(input, output) {
   output$scatter = renderPlot({
-    an = movies[movies[input$movie_type]==1,]
+    an = movies[movies[input$movie_type] == 1, ]
     setnicepar()
-    plot(an$rating, an$length, ylab="Length", xlab="Rating", 
-         pch=21, bg="steelblue", ylim=c(0, max(an$length)), 
-         xlim=c(1, 10), main=paste0(input$movie_type, " movies"))
+    plot(an$rating, an$length, ylab = "Length", xlab = "Rating",
+         pch = 21, bg = "steelblue", ylim = c(0, max(an$length)),
+         xlim = c(1, 10), main = paste0(input$movie_type, " movies"))
     grid()
-    
   })
 }
 
-runApp(list(ui=ui, server=server))
+runApp(list(ui = ui, server = server))
