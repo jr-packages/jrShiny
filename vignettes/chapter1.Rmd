@@ -11,154 +11,47 @@ output: html_vignette
 ```{r echo=FALSE, message=FALSE}
 library("jrShiny")
 library("shiny")
-library("flexdashboard")
 ```
 
 ## Exercise 1 (5 minutes)
 
-  * Go to the [What's in a name](https://gallery.shinyapps.io/names-app/name-app.Rmd) app.
-  * Which elements of the plot are are shiny and which are htmlwidgets?
-  * What are the inputs? What are the outputs?
-
-## Exercise 2 (5 minutes)
 
   * In RStudio, select `File`, then `New Project`. Create a new RStudio project in 
-  an empty directory.
-  * Run the command `jrShiny::create_project()`. This should create two directories: `original`
-  and `exercises`.
-  * Open `chapter1/shiny2.Rmd` and run the script. 
-  * Look at the other [online widgets](http://shiny.rstudio.com/gallery/widget-gallery.html)
-  * Add as many shiny widgets as you can to your document in the next 5 minutes.
+  an empty directory. Call it something useful like `shiny_day1_practice`.
+  * In Rstudio, select `File`, then `New File`, then `R markdown...`.
+  * Select shiny from the options on the left
+  * Give an appropriate title, such as `my first app`
+  * Once you have created the document, delete line 7 onwards and save the document.
+  * Congrats, you've created your first (albeit empty) shiny app.
   
-## Exercise 3 (5 minutes)
+## Exercise 2 (5 minutes)
+
+  * Add a code chunk that contains the simple code `1 + 1`
+  * Make the chunk display but not run the code, then knit the document
+  * Make the chunk run but not display the code, then knit the document
   
-  * Open `chapter1/shiny3.Rmd` and run. 
-  * Include the line
-    ```{r eval=FALSE}
-    ## Arguments: id, code to execute on the server
-    observeEvent(input$n, {print(input$n)}) 
-    ```
-    and look at the `R Markdown` tab. 
-  * Try a different shiny widget.
+## Exercise 3 (10 minutes)
+
+Add the following widgets to your R markdown document, the options for each widget can be whatever you like at this stage:
+
+  * `selectInput()` 
+  * `sliderInput()` 
+  * `numericInput()` 
+  * `radioButtons()`, see `?radioButtons` for help
   
-## Exercise 4 (5 minutes)
 
-  * Open `chapter1/shiny4a.Rmd` and run. 
-    * Add a second slider and display the sum of both sliders.
-    * Let the slider determine the value of `n` in an `rnorm` call, i.e. `rnorm(input$n)`. Using
-    `renderPlot`, generate a scatter plot of random numbers where the sample size is determined by 
-    a slider.
-  * Open `chapter1/shiny4b.Rmd` and run. 
-    * Create another `sliderInput` widget to control the mean value used in the `rnorm` function call, i.e.
-        ```{r eval=FALSE}
-        ## input$mean comes from a second slider
-        rnorm(input$n, input$mean)
-        ```
-    * Add in a `selectInput` widget to switch between generating random numbers from 
-    a normal distribution and a uniform distribution.  
-    * Add `renderText(input$n)` to the script to print the value  of `input$n`.
-    * Instead of printing `input$n`, print out the largest value in the sample.
-        * Do you see a problem?
+## Exercise 4 (10 minutes)
 
-## Exercise 5
-
-  * Open `chapter1/shiny5.Rmd` and run. 
-  * Fix the syncing problem between the plot and the text by using the `reactive` function.
-  * Add in a `selectInput` widget to switch between generating random numbers from a normal distribution
-  and a uniform distribution.
-    
-## Exercise 6
-
-  * Open `chapter1/shiny6.Rmd` and run. 
-  * Using `eventReactive`, only redraw the graph and calculate the maximum value when the `Plot it` button is pressed.
-  * Change `actionButton` to `actionLink`
+  * Run the command `jrShiny::create_project()`. This should create two directories: `original` and `exercises`.
+  * Open `exercises/chapter1/exercise4.Rmd` and run the script. 
+  * Display the chosen number on the slider using a `renderText()`
+  * To simulate random numbers we could use the code `runif(n = input$n)`, display a plot of the random numbers using `renderPlot()`
   
-## Exercise 7
+## Exercise 5 (10 minutes)
 
-  * Open `chapter1/shiny7.Rmd` and run. 
-  * Using `reactiveValues` and `observeEvents` to only redraw the plot when a button is clicked.
-
-----
-
-## Further Reading
-
-When I was developing this tutorial, I created a couple of simple examples to illustrate different
-shiny components. These examples are found in `chapter1/` and the files start with `Why_`.
-
-
-
-
-
-
-
-
-
-
-<!-- ## Exercise 1 -->
-
-<!-- Copy the [simple_shiny](simple_shiny.Rmd) file to RStudio and knit.  -->
-
-<!-- 1. The `sliderInput` functions control the year selection. Change the `min`, `max`, `step` and `value` arguments. -->
-<!-- 1. The `selectInput` function highlights the points. Look at the `colnames(movies)` and add -->
-<!-- a few more options. -->
-<!-- 1. The first arguments of `sliderInput` and `selectInput` are unique ids. Look at the plotting code -->
-<!-- and see how they interact. -->
-<!-- 1. Add another `sliderInput` that controls the maximum value to display on the `y`-axis.  -->
-
-<!-- ## Exercise 2 -->
-
-<!-- Re-copy the [simple_shiny](simple_shiny.Rmd) file to RStudio. -->
-
-<!--  * Run  -->
-<!--     ```{r results="hide"} -->
-<!--     sliderInput("min_year", label = "Minimum year:", min=1930, max=2010, step=10, value=1930, sep="") -->
-<!--     ``` -->
-<!--     in your console and examine the output. Try changing `min` and `max`. Re examine the output. -->
-
-<!--   * Go to the shiny widgets [gallery](http://shiny.rstudio.com/gallery/widget-gallery.html) and -->
-<!--   experiment with a few of the widgets. -->
-<!--   * Change the `selectInput` widget to `radioButtons`. Hint: Look at the example in the `radioButton` help page -->
-
-<!-- ## Exercise 3 -->
-
-<!-- Re-copy the [simple_shiny](simple_shiny.Rmd) file to RStudio. -->
-
-<!--   * Open the [shiny components](shiny_components.Rmd) and knit -->
-<!--   * Change the scatter plot in the shiny app, to a histogram that displays movie `Rating`.  -->
-<!--   The drop-down menu should now select the type of movies displayed, e.g.  -->
-<!--   if `Action` is selected, only `Action` movies as displayed in the histogram. -->
-
-<!--   * Create another pane in the shiny app. Use `renderText` to display the total number of movies in the histogram. -->
-<!--   * __Harder__: Add an interactive [value boxes]{http://rmarkdown.rstudio.com/flexdashboard/using.html#value_boxes}. Select -->
-<!--   a suitable icon from [ionicons](http://ionicons.com/) -->
-
-
-<!-- ### Further examples -->
-
-<!--  * [Biclust](https://jjallaire.shinyapps.io/shiny-biclust/) -->
-<!--  * [crandash](https://jjallaire.shinyapps.io/shiny-crandash/) -->
-<!--  * [Brushing](https://jjallaire.shinyapps.io/shiny-ggplot2-brushing/) -->
-<!--  * [kmeans](https://jjallaire.shinyapps.io/shiny-kmeans/) -->
-<!--  * [diamonds](https://jjallaire.shinyapps.io/shiny-ggplot2-diamonds/) -->
-
-
-<!-- ## Exercise 4 -->
-
-<!--   * Add the drop down menu button -->
-<!--   ```{r results="hide"} -->
-<!--   selectInput("mpaa", label = "MPAA", c("R", "PG-13", "PG", "NC-17")) -->
-<!--   ``` -->
-<!--   to the side bar. When a mpaa rating is changed, the plots should be updated. -->
-<!--   * Include an additional term  - `all` - to indicate that all ratings should be displayed. -->
-
-<!-- ## Exercise 5 -->
-
-<!--   * Update the other pages of the [shiny components](shiny_components.Rmd) file to use \cc{reactive}  -->
-<!--   expressions. -->
-
-<!-- ## Exercise 6 -->
-
-<!--   * Make pages 2 & 3 of the [shiny components](shiny_components_reactive_isolate.Rmd) use `isolate`. -->
-
-
-
+`iris` is an infamous dataset within the programming community. It contains widght and length measurements for the `sepal` and `petal` of three different flowers.
+  * Open `chapter1/exercise5.Rmd` and run. 
+  * What is `choices = unique(iris$Species)` doing?
+  * We can filter the `iris` data frame for the user's chosen species with the code `selected = iris[iris$Species == input$flower_choice,]`
+      * Use `renderText()` to add text that displays the average petal length for the species chosen by the user.
+      * (Harder) Display a plot of `Petal.Width` v `Petal.Length` for the species chosen by the user.

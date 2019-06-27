@@ -1,0 +1,18 @@
+---
+runtime: shiny
+---
+
+```{r echo=FALSE}
+data(iris)
+actionButton("setosa","Setosa!")
+actionButton("versicolor", "Versicolor!")
+
+rvs = reactiveValues(data = iris)
+```
+
+
+```{r}
+renderPlot({
+  plot(rvs$data$Petal.Width, rvs$data$Petal.Length)
+})
+```
