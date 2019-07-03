@@ -15,18 +15,18 @@ library("shiny")
 
 ## Exercise 6 (10 minutes)
 
-Open `chapter2/exercise6.Rmd`. This contains the answers to Exercise 5. Here we're calculating the variable `selected` twice which is inefficient. 
+Open `chapter2/exercise6.Rmd`. This contains the answers to Exercise 5. Here we're calculating the variable `selected` twice which is inefficient.     
   * Use the `reactive()` function such that you `selected` is only calculated once.
   
 ## Exercise 7 (10 minutes)
 
-Use `chapter2/exercise6.Rmd` again. 
-  * (Harder) Use an `actionButton()` and an `eventReactive()` to make it so that the plot and text only render when the button is clicked.
-  *  Change `actionButton` to `actionLink`
+Use `chapter2/exercise6.Rmd` again.     
+  * (Harder) Use an `actionButton()` and an `eventReactive()` to make it so that the plot and text only render when the button is clicked.    
+  *  Change `actionButton` to `actionLink`    
   
 ## Exercise 8a (10 minutes)
 
-Open `chapter2/exercise8.Rmd`. Here we have one button for the flower setosa and one for versicolor. We've also set up a `reactiveValues()` that initialises to the entire iris data set
+Open `chapter2/exercise8.Rmd`. Here we have one button for the flower setosa and one for versicolor. We've also set up a `reactiveValues()` that initialises to the entire iris data set    
     * Use the `observeEvent()` function to update the reactiveValues to the correctly filtered data set, depending on which button the user clicks
     
 ## Exercise 8b

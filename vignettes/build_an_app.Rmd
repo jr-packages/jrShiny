@@ -1,0 +1,76 @@
+---
+title: "Build an app"
+date: "`r Sys.Date()`"
+author: "Jumping Rivers"
+output: html_vignette
+---
+<!--
+%\VignetteEngine{knitr::rmarkdown}
+%\VignetteIndexEntry{Build an app}
+-->
+
+Instead of doing little exercises, we're going to take you right through building your very own app. If you look in "exercises/build_an_app", there should be two files, server.R and ui.R. If you run these you will see the app you are going to build. We're going to build an app that lets people search for new movies to watch based on their preferences using a set of updated movies data. 
+
+The important part of this app isn't any of the data wrangling. So don't worry if you struggle with that part. Please ask your trainer any questions about anything you get stuck on. It's their job, that's why they're there! 
+
+Pre question prep: We're going to be using an updated movies data set called `movies_new`. Open up an Rscript and run the code
+```{r, eval = FALSE}
+data(movies_new, package = "jrShiny")
+```
+This will load the new data in. Take a look at the data before you start building an app centred around it!
+
+1. Set up an empty shiny app. File -> New File -> Shiny Web App 
+    * Delete all of the preset code in ui.R
+    * Make you server just an empty function like this 
+    ```{r, eval = FALSE}
+    function(input, output) {
+      
+    }
+    ```
+    
+2. Set up an empty shiny dashboard with the title "Build an app!"
+    * Make sure the data is loaded, put the following line of code into server.R
+    ```{r, eval = FALSE}
+    data(movies_new, package = "jrShiny")
+    ```
+    
+3. For the moment, we're just going to have one page so we don't dont need to add any tab items. Add a row in the dashboard body that contains a data table of the movies data set. _**Hint**_: You'll need `library("DT")`, `fluidRow()`, `box()`, `dataTableOutput()` and `renderDataTable()`
+
+4. The data table looks a bit rubbish because it's going off the end of the table. Make it only displayed the title, year, duration, classification and rating columns.
+
+5. Add a row above the row containing your data table. 
+    * Put a selectInput in this row that contains the options "12A", "PG",  "U", "15", "18". Eventually we'll allow the user to filter the movies based on their selection of this selectInput
+    
+6. Create a list of `reactiveValues()` containing one value, `data`, that is initialised to the new movies data set. 
+    * Use `rvs$data` inside `renderDataTable()` instead of the static data we were using before
+
+7. Using either `observeEvent()` or `observe()`, filter `rvs$data` accordingly everytime the user selects a new classification of movie. You can filter the data set like so 
+```{r, eval = FALSE}
+movies_new[movies_new$classification == input$id_of_widget,]
+```
+    
+8. Add the argument `multiple = TRUE` to your `selectInput()` and change the `==` symbol in your filter command to `%in%`. What happens?
+
+9. In the row next to your selectInput, add a slider that goes from 0-10. We're going to allow the user to select a minimum average rating
+
+10. Update `rvs$data` according to the users selection of the minimum average rating. If you were using `observeEvent()` for question 7), now would be a good time to switch to using `observe()`. Hint: You can filter the data like so 
+```{r, eval = FALSE}
+movies_new[movies_new$rating >= input$id_of_widget,]
+```
+
+11. In the row containing your widgets, add a sliderInput that goes from one to the maximum duration in the data set. We're going to allow the user to a select a maximum duration of a film. 
+
+12. Update `rvs$data` according to the users selection of the maximum film duration. Hint: You can filter the data like so
+```{r, eval = FALSE}
+movies_new[movies_new$duration <= input$id_of_widget,]
+```
+
+13. In the row containing your widgets, add a sliderInput that goes from the minimum range in the column `year` to the maximum in the range. We're going to allow the user to select a range of dates. This will be tad hard that before. 
+    * In your `sliderInput()`, put `value = c(1950, 2000)`. What happens? 
+    
+14. Update `rvs$data` according to the users date range selection. Now that the slider has two values on it, input$sliderId will return a vector of length two where the first value is the minimum value and the second is the maximum. Hint: You can filter the data like so 
+```{r, eval = FALSE}
+movies_new[movies_new$year > input$id_of_widget[1] & movies_new$year < input$id_of_widget[2]]
+```
+
+15. Obviously at the moment we just have one page. Try adding the control widgets to a different tab or to a completely different page. In the solutions I have added the control widgets to a different page and spruced up the boxes a bit too.  

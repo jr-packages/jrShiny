@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="Jumping Rivers" />
+
+<meta name="date" content="2019-07-03" />
+
+<title>Chapter 3 Exercises</title>
+
+
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#header {
+text-align: center;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Chapter 3 Exercises</h1>
+<h4 class="author">Jumping Rivers</h4>
+<h4 class="date">2019-07-03</h4>
+
+
+
+<!--
+%\VignetteEngine{knitr::rmarkdown}
+%\VignetteIndexEntry{Chapter 3 Exercises}
+-->
+<div id="exercise-14" class="section level2">
+<h2>Exercise 14</h2>
+<ul>
+<li>Open <code>chapter2/exercise14.R</code> and run.</li>
+<li>Create a new directory, with two files: <code>ui.R</code> and <code>server.R</code>
+<ul>
+<li>Move the ui section of the app to <code>ui.R</code></li>
+<li>Move the server section of the app to <code>server.R</code></li>
+<li>Rerun the app via these new files.</li>
+</ul></li>
+<li>Change the scatter plot to a histogram of movie lengths.</li>
+</ul>
+</div>
+<div id="exercise-15" class="section level2">
+<h2>Exercise 15</h2>
+<ul>
+<li>Open <code>chapter2/exercise15.R</code> and run. Experiment with the columns widths.
+<ul>
+<li>You can move columns to the right by adding the <code>offset</code> parameter to the <code>column()</code> function, e.g. <code>column(4, offset=1, ...)</code></li>
+</ul></li>
+<li><p>Reproduce</p>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>Hint: You will need to use the <code>offset</code> argument</p></li>
+<li><p>Reproduce</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYAAAAGACAMAAACTGUWNAAABoVBMVEUCAgIDAwMLCwsMDAwQEBATExMUFBQYGBgaGhocHBwdHR0eHh4fHx8gICAhISEiIiIjIyMkJCQlJSUmJiYoKCgpKSkqKiorKyssLCwtLS0uLi4xMTEzMzM2NjY3Nzc4ODg5OTk7Ozs8PDw+Pj5BQUFCQkJERERFRUVJSUlNTU1OTk5SUlJTU1NVVVVXV1dYWFhZWVlaWlpbW1tcXFxdXV1eXl5fX19iYmJjY2NkZGRlZWVoaGhpaWlra2tsbGxtbW1ubm5vb29wcHBycnJ1dXV3d3d7e3t9fX1/f3+CgoKDg4OEhISFhYWHh4eIiIiJiYmKioqMjIyOjo6Pj4+QkJCTk5OUlJSWlpaXl5ecnJykpKSlpaWmpqaqqqqrq6usrKyurq6wsLCzs7O0tLS4uLi5ubm8vLy9vb2/v7/AwMDIyMjKysrNzc3Pz8/Q0NDZ2dna2trc3Nze3t7g4ODi4uLk5OTl5eXn5+fo6Ojr6+vs7Ozt7e3v7+/w8PDy8vL09PT19fX29vb39/f4+Pj5+fn6+vr7+/v8/Pz9/f3+/v7///9HPxehAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAFg0lEQVR4nO3Y+3NMZxyA8biHygURooqSpFXaVKQuiSirrnFpitVGUVKrtnVpS1zqVkKy37/a2d0ZM1gzmRNznrDP89Pu+55933POZ/Yy2xCp6t24315rY2+6O9mQEmAk3es+3kYEYBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMATgA4AeAEgBMArt4AHjc0LZ6/c3J0oPr09nr2dOoQYG7E3WW/CUBVBoj+H0cHSvva2s/GlrlD8AnVI8C1hb+PDlzonLjXfMd3QNYl3wFNyw/F6EDudMSOSwJkXeUjKBKAvQlA/0UBsu4VwLmuyfstY7fXwedTvwCl3MqOkXjWcRA+oXoDmHEJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAnABwAsAJACcAXNYAPcfT1PflB1BfqkvryRbgyv5UNa5YO+Nb0Zju2q5kCpCyNcVMt0tVcU2m2wnwZgLACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALU6uGspk9ah0rvmu5Ju26NBKjVwwURD7rOJI/GH9WYFmCKTQsg/loVhb7m86V9be1nI7/nm84j5amnfcu6NxSrg5/ejMaf49vzhe25r3an3EqAWlUAns+OQuPduNA5ca/5Tr7txcT68nIne0s3GorVwR9++XfR1mj6rzBvPJbeSreVALWqALyYE4UtEbnTETsu5b+PODGcjG7+I2J1sTp4eduvx5bf+iwKmyO6/063lQC1qgBcSz6CdkbsTe51/8X8roijPyWjX18tr1sd/L9td3HD8IHKYQLUaFoAj744U7mz57om77eM5VuePO74M5k69V38M6tYHYzO1vEDC68K8K6m8TN0SUvr4VLlzpZyKztGIr9p7dKh8tTTre3dg9erg3H087g8e7xyWO9Yuq0EmFr54fe21OsJMLUESJN/RbyVAG8mAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQAnAJwAcALACQD3cQMMHp/xDWYL8BL6G3HvmO2HwQAAAABJRU5ErkJggg==" /><!-- --></p>
+<p>Hint: You will need to use the <code>offset</code> argument and two <code>fluidRow</code></p></li>
+</ul>
+</div>
+<div id="exercise-16" class="section level2">
+<h2>Exercise 16</h2>
+<ul>
+<li>In Rstudio, select <code>File</code>, then <code>New File</code>, then <code>Shiny Web App</code></li>
+<li>Create an appropriate app name, and make sure you select to split it into <code>ui.R/server.R</code> Congrats, you’ve just created your first shiny app! We’re going to use the iris data set to build up a shiny app.</li>
+<li>In the UI, remove the sliderInput from the siderbarPanel and add the selectInput from exercise 5.</li>
+<li>Change the ID of the plotOutput to something more appropriate for the iris data set.</li>
+<li>In <code>server.R</code>, get the plot to display the plot from exercise 6</li>
+</ul>
+<!-- ## Exercise 3: Layouts -->
+<!--   * Open `chapter2/layout_app1.R` and run. -->
+<!--   * Add a new tab to the output -->
+<!--     * Let this new tab show a table of two variables, `length` and `rating`. -->
+<!--     * Try making this an interactive table using `DT::datatable`. -->
+<!--     * Make sure to remember to use the right `render*` and `*Output` functions. -->
+<!-- A second exerise using the `navbarPage` function -->
+<!--   * Open `chapter2/layout_app2.R` and run -->
+<!--   * Add a new page to the output -->
+<!--     * Let this new tab show a table of two variables, `length` and `rating`. -->
+<!--     * Try making this an interactive table using `DT::datatable`. -->
+<!--   * Try using `navbarMenu` to create a dropdown menu that combines both the summary page and your new tab. -->
+<!--   * If you wanted you could also try to create something that allows different input data to be shown within each tab -->
+<!-- ## Exercise 4: Dashboards -->
+<!--   * Open `chapter2/dashboard_app1.R` and run. -->
+<!--   * The app currently shows a list of available functions from the `shinydashboard` package. -->
+<!--   * Use the available functions to create a new tab which plots `length` against `rating` for the `movies` data. -->
+<!--   * Add a value box that shows the number of movies that are longer than 4 hours. -->
+<!--   * Experiment with changing icons for your tabs and boxes. -->
+<!-- ## Exercise 5: interactive graphics -->
+<!--   * Open `chapter2/interactive1.R` and run. -->
+<!--     * Change the output to display `x` and `y` to 4 significant figures. -->
+<!--     * If you are familiar with `ggplot2`, change the base graphic plot to a ggplot2 scatter plot.  -->
+<!--     * Change the plot to a boxplot - does it still work -->
+<!--   * Open `chapter2/interactive2.R` and run. Explore the other types of point selection. -->
+<!-- ## Exercise 6: acting on interactive graphics -->
+<!--   * Open `chapter2/interactive3.R` and run. -->
+<!--   * In the `nearPoints` function, what does -->
+<!--     * the argument `maxpoints=1` do? -->
+<!--     * the argument `allRows=TRUE` do? -->
+<!--   * On the scatter plot, add a line of best fit using the `lm` function -->
+<!--     * When you click on a point, remove that point from the regression calculation and -->
+<!--     refit the line. -->
+<!--     * Add a reset button to you app -->
+<!--     * Rather than clicking on a point, try brushing - selecting multiple, and altering the line. -->
+<!-- ## Exercise 7: invalidating reactive contexts -->
+<!--   * Open `chapter2/invalidate.R` and  run. -->
+<!--   * Can you change the app such that it produces a plot of movie ratings vs lengths from a random sample of movies that changes every 5 seconds -->
+<!--   * Create a summary output of movie years, let this be it's own reactive context updating every 3 seconds from a random sample of movies. -->
+<!--   * __Hard:__ Create a summary output of movie years, let this be it's own reactive context updating every 3 seconds by cycling through the movie genres. -->
+</div>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

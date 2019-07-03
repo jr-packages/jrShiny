@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="Jumping Rivers" />
+
+<meta name="date" content="2019-07-03" />
+
+<title>Introduction to htmlwidgets</title>
+
+
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#header {
+text-align: center;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Introduction to htmlwidgets</h1>
+<h4 class="author">Jumping Rivers</h4>
+<h4 class="date">2019-07-03</h4>
+
+
+
+<!--
+%\VignetteEngine{knitr::rmarkdown}
+%\VignetteIndexEntry{Introduction to htmlwidgets}
+-->
+<div id="demo-list" class="section level2">
+<h2>Demo list</h2>
+<p>To install (most of) the necessary packages to run the vignettes below,</p>
+<ul>
+<li>Interactive Heat Maps: <a href="d3heatmap.html">d3heatmap</a>, <a href="d3heatmap.R">R</a>, <a href="d3heatmap.Rmd">Rmd</a></li>
+<li>Interactive tables: <a href="DT.html">DT</a>, <a href="DT.R">R</a>, <a href="DT.Rmd">Rmd</a></li>
+<li>Circle Plots with Bundled Edges: <a href="edgebundleR.html">edgebundleR</a>, <a href="edgebundleR.R">R</a>, <a href="edgebundleR.Rmd">Rmd</a></li>
+<li>Formattable Data Structures: <a href="formattable.html">formattable</a>, <a href="formattable.R">R</a>, <a href="formattable.Rmd">Rmd</a></li>
+<li>Interactive ggplot2 graphs: <a href="ggiraph.html">ggiraph</a>, <a href="ggiraph.R">R</a>, <a href="ggiraph.Rmd">Rmd</a></li>
+<li>Network graphs: <a href="networkD3.html">networkD3</a>, <a href="networkD3.R">R</a>, <a href="networkD3.Rmd">Rmd</a></li>
+<li>Add pan and zoom to graphics: <a href="svgPanZoom.html">svgPanZoom</a>, <a href="svgPanZoom.R">R</a>, <a href="svgPanZoom.Rmd">Rmd</a></li>
+<li>jQuery Sparkline HTML Widget:<a href="sparkline.html">sparkline</a>, <a href="sparkline.R">R</a>, <a href="sparkline.Rmd">Rmd</a></li>
+</ul>
+<hr />
+<div id="other-widgets" class="section level3">
+<h3>Other widgets</h3>
+<ul>
+<li><a href="https://cran.rstudio.com/web/packages/leaflet/">leaflet</a> creates interactive map - <a href="https://rstudio.github.io/leaflet/">homepage</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/pairsD3/">pairsD3</a>: d3 Scatterplot Matrices - <a href="http://garthtarr.com/apps/pairsD3/">demo</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/rhandsontable/">rhandsontable</a>: Interface to the <code>Handsontable.js</code> Library; a minimalist Excel-like data grid editor - <a href="https://jrowen.github.io/rhandsontable/">examples</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/scatterD3/">scatterD3</a>: d3 JavaScript Scatterplot from R - <a href="https://data.nozav.org/app/scatterD3/">examples</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/threejs/">threejs</a>: Interactive 3D Scatter Plots, Networks and Globes - <a href="https://bwlewis.github.io/rthreejs/">examples</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/visNetwork/">visNetwork</a>: Network Visualization using <code>vis.js</code> Library - <a href="https://datastorm-open.github.io/visNetwork/">examples</a></li>
+</ul>
+<div id="entire-plotting-frameworks" class="section level4">
+<h4>Entire plotting frameworks</h4>
+<p>The packages below link to very javascript frameworks (<code>plotly</code> is quite nice).</p>
+<ul>
+<li><a href="https://cran.rstudio.com/web/packages/plotly/">plotly</a>: Create Interactive Web Graphics via <code>plotly.js</code> - <a href="https://plot.ly/r/">examples</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/rAmCharts/">rAmCharts</a>: JavaScript Charts API Tool - <a href="https://datastorm-open.github.io/introduction_ramcharts/">examples</a>, <a href="http://www.amcharts.com/about/">about</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/rbokeh/">rbokeh</a>: R Interface for <a href="https://hafen.github.io/rbokeh/">Bokeh</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/highcharter/">highcharter</a>: A wrapper for the <a href="http://www.highcharts.com/">Highcharts</a> library - <a href="http://jkunst.com/highcharter/">homepage</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/dygraphs">Interface</a> to the <a href="http://dygraphs.com/">dygraphs</a> JavaScript charting library - <a href="https://rstudio.github.io/dygraphs/">demos</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/metricsgraphics/">metricsgraphics</a> provides an <code>htmlwidgets</code> interface to the <code>MetricsGraphics.js</code> - <a href="https://hrbrmstr.github.io/metricsgraphics/">examples</a></li>
+</ul>
+</div>
+<div id="niche-widgets" class="section level4">
+<h4>Niche widgets</h4>
+<p>Interesting widgets, but aimed at a particular market.</p>
+<ul>
+<li><a href="https://cran.rstudio.com/web/packages/DiagrammeR/">DiagrammeR</a>: Create graph diagrams and flowcharts using R</li>
+<li><a href="https://cran.rstudio.com/web/packages/qtlcharts/">qtlcharts</a>: Interactive Graphics for QTL Experiments - <a href="http://kbroman.org/qtlcharts/">examples</a></li>
+<li><a href="https://cran.rstudio.com/web/packages/radarchart/">radarchart</a>: Radar Chart from Chart.js</li>
+<li><a href="https://cran.rstudio.com/web/packages/rchess/">rchess</a>: R package for chess validations!</li>
+<li><a href="https://cran.rstudio.com/web/packages/treescape/">treescape</a>: Statistical Exploration of Landscapes of Phylogenetic Trees</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
