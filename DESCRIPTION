@@ -1,7 +1,7 @@
 Package: jrShiny
 Type: Package
 Title: R Shiny Exercises
-Version: 1.1.4
+Version: 1.1.5
 Authors@R: person(given="Jumping", family="Rivers",
     email="info@jumpingrivers.com", role = c("aut", "cre"))
 Description: Functions and exercises for R courses.
