@@ -25,4 +25,12 @@ create_project = function() {
   move_files(2, dest = "exercises")
   move_files(3, dest = "original")
   move_files(3, dest = "exercises")
+  move_files(4, dest = "original")
+  move_files(4, dest = "exercises")
+  move_files(5, dest = "original")
+  move_files(5, dest = "exercises")
+  dir.create(file.path("exercises", "build_an_app"))
+  path = system.file("build_an_app", package = "jrShiny")
+  fnames = list.files(path, full.names = TRUE)
+  file.copy(fnames, file.path("exercises", "build_an_app"))
 }
