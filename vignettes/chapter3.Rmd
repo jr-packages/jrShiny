@@ -45,7 +45,7 @@ output: html_vignette
 
 ## Exercise 16
 
-  * In Rstudio, select `File`, then `New File`, then `Shiny Web App`
+  * In RStudio, select `File`, then `New File`, then `Shiny Web App`
   * Create an appropriate app name, and make sure you select to split it into `ui.R/server.R`
 Congrats, you've just created your first shiny app! We're going to use the iris data set to build up a shiny app.
   * In the UI, remove the sliderInput from the siderbarPanel and add the selectInput from exercise 5.

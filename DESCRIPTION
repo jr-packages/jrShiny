@@ -1,21 +1,47 @@
-Package: jrShiny
 Type: Package
+Package: jrShiny
 Title: R Shiny Exercises
-Version: 1.1.5
-Authors@R: person(given="Jumping", family="Rivers",
-    email="info@jumpingrivers.com", role = c("aut", "cre"))
+Version: 1.1.6
+Authors@R: 
+    person(given = "Jumping",
+           family = "Rivers",
+           role = c("aut", "cre"),
+           email = "info@jumpingrivers.com")
 Description: Functions and exercises for R courses.
+License: CC0
+URL: https://www.jumpingrivers.com/
 Depends:
     R (>= 3.5)
-Imports: utils, ggplot2movies, drat, shinydashboard, shiny, DT, rmarkdown,
-     ggplot2, knitr, plotly
+Imports: 
+    DT,
+    ggplot2,
+    ggplot2movies,
+    knitr,
+    plotly,
+    rmarkdown,
+    shiny,
+    shinydashboard,
+    utils
 Suggests:
-    formattable, edgebundleR, d3heatmap, networkD3, 
-    gridSVG, svgPanZoom, svglite, MASS, htmlwidgets, ggiraph, 
-    sparkline, flexdashboard, dygraphs, rsconnect, 
-    lintr, testthat
-License: CC0
+    d3heatmap,
+    drat,
+    dygraphs,
+    edgebundleR,
+    flexdashboard,
+    formattable,
+    ggiraph,
+    gridSVG,
+    htmlwidgets,
+    lintr,
+    MASS,
+    networkD3,
+    rsconnect,
+    sparkline,
+    svglite,
+    svgPanZoom,
+    testthat
+VignetteBuilder: 
+    knitr
+Encoding: UTF-8
 LazyData: TRUE
-VignetteBuilder: knitr
-Repository: jr-packages
 RoxygenNote: 6.1.1
