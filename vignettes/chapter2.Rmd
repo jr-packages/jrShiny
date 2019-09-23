@@ -15,31 +15,32 @@ library("shiny")
 
 ## Exercise 6 (10 minutes)
 
-Open `chapter2/exercise6.Rmd`. This contains the answers to Exercise 5. Here we're calculating the variable `selected` twice which is inefficient.     
-  * Use the `reactive()` function such that you `selected` is only calculated once.
+Open `chapter2/exercise6.Rmd`. This contains the answers to Exercise 5. Here we're calculating the variable `selected` twice which is inefficient.
+
+  * Use the `reactive()` function so that the variable `selected` is only calculated once.
   
 ## Exercise 7 (10 minutes)
 
 Use `chapter2/exercise6.Rmd` again.     
+
   * (Harder) Use an `actionButton()` and an `eventReactive()` to make it so that the plot and text only render when the button is clicked.    
-  *  Change `actionButton` to `actionLink`    
+  *  Change `actionButton()` to `actionLink()`    
   
 ## Exercise 8a (10 minutes)
 
 Open `chapter2/exercise8.Rmd`. Here we have one button for the flower setosa and one for versicolor. We've also set up a `reactiveValues()` that initialises to the entire iris data set    
-    * Use the `observeEvent()` function to update the reactiveValues to the correctly filtered data set, depending on which button the user clicks
+  * Use the `observeEvent()` function to update the reactiveValues to the correctly filtered data set, depending on which button the user clicks
     
 ## Exercise 8b
 
-  * Convert the plot in exercise 8a to a ggplot2 graph
-  * Convert the plot from a ggplot graph to a plotly graph
+  * Convert the plot in exercise 8a to a **ggplot2** graph
+  * Convert the plot from a **ggplot2** graph to a **plotly** graph
   
 ## Exercise 8c
 
   * Using `renderTable()`, add a static table of the selected data
   * Using the **DT** library, make this table an interactive table
-  
-  
+
 ## Exercise 9 (10 minutes)
   
   * Open `chapter2/exercise9.Rmd` and run. 
@@ -55,15 +56,16 @@ Open `chapter2/exercise8.Rmd`. Here we have one button for the flower setosa and
 
   * Open `chapter2/exercise10a.Rmd` and run. 
     * Add a second slider and display the sum of both sliders.
-    * Let the slider determine the value of `n` in an `rnorm` call, i.e. `rnorm(input$n)`.        * Using `renderPlot`, generate a scatter plot of random numbers where the sample size is determined by a slider.
+    * Let the slider determine the value of `n` in an `rnorm` call, i.e. `rnorm(input$n)`.
+    * Using `renderPlot()`, generate a scatter plot of random numbers where the sample size is determined by a slider.
   * Open `chapter2/exercise10b.Rmd` and run. 
-    * Create another `sliderInput` widget to control the mean value used in the `rnorm` function call, i.e.
+    * Create another `sliderInput()` widget to control the mean value used in the `rnorm()` function call, i.e.
         ```{r eval=FALSE}
         ## input$mean comes from a second slider
         rnorm(input$n, input$mean)
         ```
-    * Add in a `selectInput` widget to switch between generating random numbers from 
-    a normal distribution and a uniform distribution.  
+    * Add in a `selectInput()` widget to switch between generating random numbers from 
+    a normal distribution and a uniform distribution. For a uniform distribution you would use the `runif()` function.  
     * Add `renderText(input$n)` to the script to print the value  of `input$n`.
     * Instead of printing `input$n`, print out the largest value in the sample.
         * Do you see a problem?
@@ -71,27 +73,26 @@ Open `chapter2/exercise8.Rmd`. Here we have one button for the flower setosa and
 ## Exercise 11
 
   * Open `chapter2/exercise11.Rmd` and run. 
-  * Fix the syncing problem between the plot and the text by using the `reactive` function.
-  * Add in a `selectInput` widget to switch between generating random numbers from a normal distribution
+  * Fix the syncing problem between the plot and the text by using the `reactive()` function.
+  * Add in a `selectInput()` widget to switch between generating random numbers from a normal distribution
   and a uniform distribution.
     
 ## Exercise 12
 
   * Open `chapter2/exercise12.Rmd` and run. 
-  * Using `eventReactive`, only redraw the graph and calculate the maximum value when the `Plot it` button is pressed.
-  * Change `actionButton` to `actionLink`
+  * Using `eventReactive()`, only redraw the graph and calculate the maximum value when the `Plot it` button is pressed.
+  * Change `actionButton()` to `actionLink()`
 
 ## Exercise 13
 
   * Open `chapter2/exercise13.Rmd` and run. 
-  * Using `reactiveValues` and `observeEvents` to only redraw the plot when a button is clicked.
+  * Using `reactiveValues()` and `observeEvent()` to only redraw the plot when a button is clicked.
 
 ----
 
 ## Further Reading
 
-When I was developing this tutorial, I created a couple of simple examples to illustrate different
-shiny components. These examples are found in `chapter2/` and the files start with `Why_`.
+When I was developing this tutorial, I created a couple of simple examples to illustrate different shiny components. These examples are found in `chapter2/` and the files start with `Why_`.
 
 
 

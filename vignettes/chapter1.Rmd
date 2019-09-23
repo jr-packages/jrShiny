@@ -50,6 +50,7 @@ Add the following widgets to your R markdown document, the options for each widg
 ## Exercise 5 (10 minutes)
 
 `iris` is an infamous dataset within the programming community. It contains widght and length measurements for the `sepal` and `petal` of three different flowers.
+
   * Open `chapter1/exercise5.Rmd` and run. 
   * What is `choices = unique(iris$Species)` doing?
   * We can filter the `iris` data frame for the user's chosen species with the code `selected = iris[iris$Species == input$flower_choice,]`

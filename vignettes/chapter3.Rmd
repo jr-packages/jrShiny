@@ -16,7 +16,7 @@ output: html_vignette
     * Move the ui section of the app to `ui.R` 
     * Move the server section of the app to `server.R`
     * Rerun the app via these new files.
-  * Change the scatter plot to a histogram of movie lengths.
+  * Change the scatter plot to a histogram of movie lengths. If you're not comfortable with **ggplot2**, feel free to do it in base.
   
 ## Exercise 15
 
@@ -45,10 +45,14 @@ output: html_vignette
 
 ## Exercise 16
 
-  * In Rstudio, select `File`, then `New File`, then `Shiny Web App`
+  * In RStudio, select `File`, then `New File`, then `Shiny Web App`
   * Create an appropriate app name, and make sure you select to split it into `ui.R/server.R`
 Congrats, you've just created your first shiny app! We're going to use the iris data set to build up a shiny app.
-  * In the UI, remove the sliderInput from the siderbarPanel and add the selectInput from exercise 5.
+  * In the UI, remove the `sliderInput()` from the siderbarPanel and add the `selectInput()` from exercise 5, i.e.
+    ```{r, eval = FALSE}
+    selectInput("flower_choice", "Choose your flower", 
+              choices = unique(iris$Species))
+    ```
   * Change the ID of the plotOutput to something more appropriate for the iris data set.
   * In `server.R`, get the plot to display the plot from exercise 6
     

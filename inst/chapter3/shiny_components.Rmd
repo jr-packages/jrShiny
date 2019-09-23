@@ -14,8 +14,6 @@ library("flexdashboard")
 ```{r}
 library("ggplot2")
 
-## Teaching package from: www.ncl.ac.uk/maths/rcourse/details.html
-## install.packages("jrShiny", repos="http://rcourses.github.io/drat/")
 
 ## Subset of the ggplot2movies data set
 data(movies, package="jrShiny")
