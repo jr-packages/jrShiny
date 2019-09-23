@@ -20,7 +20,8 @@ server = function(input, output) {
   ## Text box
   output$info = renderPrint(
     # nearPoints() also works with hover and dblclick events
-    nearPoints(dd, input$plot_click, xvar = "x", yvar = "y")
+    nearPoints(dd, input$plot_click, 
+               xvar = "x", yvar = "y")
   )
 
 }

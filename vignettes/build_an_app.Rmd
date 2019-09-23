@@ -36,29 +36,29 @@ This will load the new data in. Take a look at the data before you start buildin
     
 3. For the moment, we're just going to have one page so we don't dont need to add any tab items. Add a row in the dashboard body that contains a data table of the movies data set. _**Hint**_: You'll need `library("DT")`, `fluidRow()`, `box()`, `dataTableOutput()` and `renderDataTable()`
 
-4. The data table looks a bit rubbish because it's going off the end of the table. Make it only displayed the title, year, duration, classification and rating columns.
+4. The data table looks a bit rubbish because it's going off the end of the table. Make it only display the `title`, `year`, `duration`, `classification` and `rating` columns.
 
 5. Add a row above the row containing your data table. 
-    * Put a selectInput in this row that contains the options "12A", "PG",  "U", "15", "18". Eventually we'll allow the user to filter the movies based on their selection of this selectInput
+    * Put a `selectInput()` in this row that contains the options "12A", "PG",  "U", "15", "18". Eventually we'll allow the user to filter the movies based on their selection of this `selectInput()`
     
 6. Create a list of `reactiveValues()` containing one value, `data`, that is initialised to the new movies data set. 
     * Use `rvs$data` inside `renderDataTable()` instead of the static data we were using before
 
-7. Using either `observeEvent()` or `observe()`, filter `rvs$data` accordingly everytime the user selects a new classification of movie. You can filter the data set like so 
+7. Using either `observeEvent()` or `observe()`, filter `rvs$data` accordingly everytime the user selects a new classification of movie. You can filter the data set like so (feel free to use other methods such as **dplyr** if you're comfortable with those)
 ```{r, eval = FALSE}
 movies_new[movies_new$classification == input$id_of_widget,]
 ```
     
-8. Add the argument `multiple = TRUE` to your `selectInput()` and change the `==` symbol in your filter command to `%in%`. What happens?
+8. Add the argument `multiple = TRUE` to your `selectInput()` and change the `==` symbol in your filter command to `%in%`. Now run the app, what happens? The answer is not "it breaks"!
 
-9. In the row next to your selectInput, add a slider that goes from 0-10. We're going to allow the user to select a minimum average rating
+9. In the row next to your `selectInput()`, add a slider that goes from 0-10. We're going to allow the user to select a minimum average rating
 
 10. Update `rvs$data` according to the users selection of the minimum average rating. If you were using `observeEvent()` for question 7), now would be a good time to switch to using `observe()`. Hint: You can filter the data like so 
 ```{r, eval = FALSE}
 movies_new[movies_new$rating >= input$id_of_widget,]
 ```
 
-11. In the row containing your widgets, add a sliderInput that goes from one to the maximum duration in the data set. We're going to allow the user to a select a maximum duration of a film. 
+11. In the row containing your widgets, add a `sliderInput()` that goes from one to the maximum duration in the data set. We're going to allow the user to a select a maximum duration of a film. 
 
 12. Update `rvs$data` according to the users selection of the maximum film duration. Hint: You can filter the data like so
 ```{r, eval = FALSE}

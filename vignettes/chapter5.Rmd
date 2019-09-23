@@ -12,27 +12,29 @@ output: html_vignette
 ## Exercise 18: interactive graphics
 
   * Open `chapter5/interactive1.R` and run.
+    * Using `textOutput()` and `input$click`, get the shiny app to print out the `x` and `y` coordinates of a user's click on the plot
     * Change the output to display `x` and `y` to 4 significant figures.
     * If you are familiar with `ggplot2`, change the base graphic plot to a ggplot2 scatter plot.
-    * Change the plot to a boxplot - does it still work
+    * Change the plot to a boxplot - does it still work?
   * Open `chapter2/interactive2.R` and run. Explore the other types of point selection.
 
 ## Exercise 19: acting on interactive graphics
 
   * Open `chapter5/interactive3.R` and run.
   * In the `nearPoints` function, what does
-    * the argument `maxpoints=1` do?
-    * the argument `allRows=TRUE` do?
-  * On the scatter plot, add a line of best fit using the `lm` function
-    * When you click on a point, remove that point from the regression calculation and
-    refit the line.
-    * Add a reset button to you app
-    * Rather than clicking on a point, try brushing - selecting multiple, and altering the line.
+    * the argument `threshold = 100` do?
+    * the argument `maxpoints = 2` do?
+    * the argument `allRows = TRUE` do?
+    * the argument `addDist = TRUE` do?
+* When you click on a point, remove that point from the regression calculation and
+    refit the line (this is quite hard!). I did this by using the `allRows = TRUE` argument.
+    * Add a reset button to your app
+    * Rather than clicking on a point, try brushing. See `brushedPoints()` for this.
 
 ## Exercise 20: invalidating reactive contexts
 
-  * Open `chapter5/invalidate.R` and  run.
-  * Can you change the app such that it produces a plot of movie ratings vs lengths from a random sample of movies that changes every 5 seconds
+  * Open `chapter5/invalidate.R` and run.
+  * Can you change the app such that it produces a plot of movie ratings vs durations from a random sample of movies that changes every 5 seconds
   * Create a summary output of movie years, let this be it's own reactive context updating every 3 seconds from a random sample of movies.
   * __Hard:__ Create a summary output of movie years, let this be it's own reactive context updating every 3 seconds by cycling through the movie genres.
 

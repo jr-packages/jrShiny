@@ -3,8 +3,7 @@ library("jrShiny")
 
 ## Basic layout. Two regions.
 ui = basicPage(
-  plotOutput("scatter", click = "plot_click"),
-  verbatimTextOutput("info")
+  plotOutput("scatter", click = "plot_click")
 )
 
 ## Simulate data
@@ -13,9 +12,5 @@ server = function(input, output) {
   ## Scatter plot
   output$scatter = renderPlot(plot(x, y))
 
-  ## Text box
-  output$info = renderText(
-    paste0("x = ", input$plot_click$x, "\ny = ", input$plot_click$y)
-  )
 }
 runApp(list(ui = ui, server = server))
