@@ -22,10 +22,10 @@ ui = fluidPage(
 server = function(input, output) {
   output$scatter = renderPlot({
     an = movies[movies[input$movie_type] == 1, ]
-    ggplot(an, aes(x = rating, y = length)) + 
-      geom_point(colour = "steelblue") + 
-      labs(x = "Rating", 
-           y = "Length", 
+    ggplot(an, aes(x = rating, y = length)) +
+      geom_point(colour = "steelblue") +
+      labs(x = "Rating",
+           y = "Length",
            title = paste0(input$movie_type, " movies"))
   })
 }
