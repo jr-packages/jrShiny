@@ -21,7 +21,7 @@ Imports:
     shiny,
     shinydashboard,
     utils
-importFrom: ggplot2, ggplotmovies
+importFrom: ggplot2, ggplot2movies
 Suggests:
     d3heatmap,
     drat,
