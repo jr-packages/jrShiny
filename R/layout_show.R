@@ -12,7 +12,7 @@ layout_show = function(n = 1, cex=1, text = NULL) {
   par(oma = rep.int(0, 4))
   par(oma = oma_saved)
   o_par <- par(mar = rep.int(0, 4))
-  on_exit(par(o_par))
+  on.exit(par(o_par))
   for (i in seq_len(n)) {
     plot.new()
     box()
