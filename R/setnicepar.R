@@ -4,7 +4,7 @@
 #' @param mar Distance to edge
 #' @param mgp Distance from label to graph
 #' @param tck tick length
-#' @param cex.axis Axis text size
+#' @param cex_axis Axis text size
 #' @param las Rotate axis label
 #' @param mfrow plots per page
 #' @param ... Additional arguments for par
