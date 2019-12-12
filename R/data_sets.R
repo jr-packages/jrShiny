@@ -15,7 +15,7 @@ NULL
 NULL
 
 #' @name movies_new
-#' @title Updated movies data 
+#' @title Updated movies data
 #' @description Taken from kaggle
 #' @docType data
 #' @format A data frame

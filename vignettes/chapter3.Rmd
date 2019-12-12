@@ -26,8 +26,8 @@ output: html_vignette
     
     ```{r echo=FALSE, message=FALSE, fig.height=4, fig.width=4}
     library(jrShiny)
-    layout(matrix(c(1, 1, 1, 0, 2, 0), 2, 3, byrow = TRUE), heights=c(8, 4))
-    layout_show(2, text=c("Plot", "Drop down"))  
+    layout(matrix(c(1, 1, 1, 0, 2, 0), 2, 3, byrow = TRUE), heights = c(8, 4))
+    layout_show(2, text = c("Plot", "Drop down"))
     ```
     
     Hint: You will need to use the `offset` argument
@@ -36,9 +36,9 @@ output: html_vignette
   
     ```{r echo=FALSE, message=FALSE, fig.height=4, fig.width=4}
     library("jrShiny")
-    layout(matrix(c(0, 1, 1, 1, 1, 1,0,
-                    0, 0, 2, 2, 2, 0, 0), 2, 7, byrow = T), heights=c(8, 4))
-    layout_show(2, text=c("Plot", "Drop down"))  
+    layout(matrix(c(0, 1, 1, 1, 1, 1, 0,
+                    0, 0, 2, 2, 2, 0, 0), 2, 7, byrow = T), heights = c(8, 4))
+    layout_show(2, text = c("Plot", "Drop down"))
     ```
     
     Hint: You will need to use the `offset` argument and two `fluidRow`
@@ -50,8 +50,8 @@ output: html_vignette
 Congrats, you've just created your first shiny app! We're going to use the iris data set to build up a shiny app.
   * In the UI, remove the `sliderInput()` from the siderbarPanel and add the `selectInput()` from exercise 5, i.e.
     ```{r, eval = FALSE}
-    selectInput("flower_choice", "Choose your flower", 
-              choices = unique(iris$Species))
+    selectInput("flower_choice", "Choose your flower",
+                choices = unique(iris$Species))
     ```
   * Change the ID of the plotOutput to something more appropriate for the iris data set.
   * In `server.R`, get the plot to display the plot from exercise 6

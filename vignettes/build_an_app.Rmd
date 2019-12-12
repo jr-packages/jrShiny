@@ -24,7 +24,7 @@ This will load the new data in. Take a look at the data before you start buildin
     * Make you server just an empty function like this 
     ```{r, eval = FALSE}
     function(input, output) {
-      
+
     }
     ```
     
@@ -46,7 +46,7 @@ This will load the new data in. Take a look at the data before you start buildin
 
 7. Using either `observeEvent()` or `observe()`, filter `rvs$data` accordingly everytime the user selects a new classification of movie. You can filter the data set like so (feel free to use other methods such as **dplyr** if you're comfortable with those)
 ```{r, eval = FALSE}
-movies_new[movies_new$classification == input$id_of_widget,]
+movies_new[movies_new$classification == input$id_of_widget, ]
 ```
     
 8. Add the argument `multiple = TRUE` to your `selectInput()` and change the `==` symbol in your filter command to `%in%`. Now run the app, what happens? The answer is not "it breaks"!
@@ -55,14 +55,14 @@ movies_new[movies_new$classification == input$id_of_widget,]
 
 10. Update `rvs$data` according to the users selection of the minimum average rating. If you were using `observeEvent()` for question 7), now would be a good time to switch to using `observe()`. Hint: You can filter the data like so 
 ```{r, eval = FALSE}
-movies_new[movies_new$rating >= input$id_of_widget,]
+movies_new[movies_new$rating >= input$id_of_widget, ]
 ```
 
 11. In the row containing your widgets, add a `sliderInput()` that goes from one to the maximum duration in the data set. We're going to allow the user to a select a maximum duration of a film. 
 
 12. Update `rvs$data` according to the users selection of the maximum film duration. Hint: You can filter the data like so
 ```{r, eval = FALSE}
-movies_new[movies_new$duration <= input$id_of_widget,]
+movies_new[movies_new$duration <= input$id_of_widget, ]
 ```
 
 13. In the row containing your widgets, add a sliderInput that goes from the minimum range in the column `year` to the maximum in the range. We're going to allow the user to select a range of dates. This will be tad hard that before. 

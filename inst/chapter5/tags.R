@@ -14,7 +14,7 @@ background-color: #7FFFD4 !important;
 }
 "
 
-withPopup <- function(tag, text) {
+withpopup <- function(tag, text) {
   content <- div(em(text))
   tagAppendAttributes(
     tag,
@@ -47,7 +47,7 @@ ui = dashboardPage(
   )
 )
 
-server = function(input, output){
+server = function(input, output) {
  output$nbox = renderText({
    nrow(movies[movies[input$genre] == 1, ])
  })

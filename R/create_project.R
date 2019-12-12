@@ -13,7 +13,7 @@ move_files = function(chapter, dest) {
 
 
 #' Copy files from package to script
-#' 
+#'
 #' A simple function for copying package files to users directory.
 #' @export
 create_project = function() {

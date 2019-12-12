@@ -8,7 +8,7 @@ ui = fluidPage(fluidRow(
   fluidRow(plotOutput("hist"))
 )
 
-server = function(input, output){
+server = function(input, output) {
   output$parchoice = renderUI({
     switch(input$dist,
            Normal = wellPanel(numericInput("mean", label = HTML("&mu;:"), value = 0),

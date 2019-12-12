@@ -47,7 +47,10 @@ Open `chapter2/exercise8.Rmd`. Here we have one button for the flower setosa and
   * Include the line
     ```{r eval=FALSE}
     ## Arguments: id, code to execute on the server
-    observeEvent(input$n, {print(input$n)}) 
+    observeEvent(input$n, {
+      print(input$n)
+      }
+    )
     ```
     and look at the `R Markdown` tab. 
   * Try a different shiny widget.
