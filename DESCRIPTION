@@ -15,13 +15,13 @@ Depends:
 Imports: 
     DT,
     ggplot2,
+    ggplot2movies,
     knitr,
     plotly,
     rmarkdown,
     shiny,
     shinydashboard,
     utils
-importFrom: ggplot2, ggplot2movies
 Suggests:
     d3heatmap,
     drat,
