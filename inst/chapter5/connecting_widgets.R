@@ -27,10 +27,10 @@ crime_mexico = jsonlite::fromJSON(
 # instead of the gdp data, let's use mean homicide_rate
 #   for our choropleth
 mexico$homicide = crime_mexico$hd %>%
-  group_by( state_code ) %>%
-  summarise( homicide = mean(rate) ) %>%
+  group_by(state_code) %>%
+  summarise(homicide = mean(rate)) %>%
   ungroup() %>%
-  select( homicide ) %>%
+  select(homicide) %>%
   unlist
 
 
@@ -82,30 +82,30 @@ server = function(input, output, session) {
     )
     colnames(crime_wide) = c("date", as.character(mexico$state))
     rownames(crime_wide) = as.Date(crime_wide$date)
-    dygraph( crime_wide[, -1])  %>%
-      dyLegend( show = "never" )
+    dygraph(crime_wide[, -1])  %>%
+      dyLegend(show = "never")
   })
 
   observeEvent(input$dygraph1_date_window, {
-    if (!is.null(input$dygraph1_date_window)){
+    if (!is.null(input$dygraph1_date_window)) {
       # get the new mean based on the range selected by dygraph
       mexico$filtered_rate = crime_mexico$hd %>%
         filter(
           as.Date(date) >= as.Date(input$dygraph1_date_window[[1]]),
           as.Date(date) <= as.Date(input$dygraph1_date_window[[2]])
         ) %>%
-        group_by( state_code ) %>%
-        summarise( homicide = mean(rate) ) %>%
+        group_by(state_code) %>%
+        summarise(homicide = mean(rate)) %>%
         ungroup() %>%
-        select( homicide ) %>%
+        select(homicide) %>%
         unlist
 
       # leaflet comes with this nice feature leafletProxy
       #  to avoid rebuilding the whole map
       #  let's use it
-      leafletProxy( "map1", data = mexico  ) %>%
-        removeShape( layerId = ~id ) %>%
-        addPolygons( fillColor = ~pal( filtered_rate ),
+      leafletProxy("map1", data = mexico) %>%
+        removeShape(layerId = ~id) %>%
+        addPolygons(fillColor = ~pal(filtered_rate),
                      fillOpacity = 0.8,
                      color = "#BDBDC3",
                      weight = 1,

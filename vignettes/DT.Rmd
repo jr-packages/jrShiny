@@ -31,7 +31,7 @@ install.packages("DT")
 You generate an interactive table on any data frame using the `datatable` function
 
 ```{r}
-data(iris, package="datasets")
+data(iris, package = "datasets")
 datatable(iris)
 ```
 
@@ -41,5 +41,5 @@ datatable(iris)
  * [github](https://rstudio.github.io/DT/)
  
 ```{r, echo=FALSE}
-rm(list=ls())
+rm(list = ls())
 ```

@@ -17,7 +17,7 @@ ui = navbarPage("Using navbar",
   tabPanel("Summary", verbatimTextOutput("summary"))
 )
 
-server = function(input, output){
+server = function(input, output) {
   dat = reactive({
     movies[movies[input$movie_type] == 1, ]
   })

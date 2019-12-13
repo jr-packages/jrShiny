@@ -17,7 +17,7 @@ ui = dashboardPage(
   )
 )
 
-server = function(input, output){
+server = function(input, output) {
   output$shinydash = renderTable(
     data.frame(getNamespaceExports("shinydashboard"))
     )

@@ -1,9 +1,10 @@
 #' Open a solution
 #'
-#' \code{solution} opens a solution file in your RStudio scripts pane and saves a copy of the file in your working directory.
+#' \code{solution} opens a solution file in your RStudio scripts pane
+#' and saves a copy of the file in your working directory.
 #'
 #' @param number The number of solution to open. Solution numbers are paired with exercises.
-#' @return NULL 
+#' @return NULL
 #'
 #' @details Heavily based on the code in the \code{reportsWS} package.
 #' @seealso \code{\link{exercise}}

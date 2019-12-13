@@ -14,7 +14,7 @@ ui = fluidPage(titlePanel("invalidate"),
                )
 )
 
-server = function(input, output, session){
+server = function(input, output, session) {
   dat = reactive({
     invalidateLater(4000, session)
     # the plot has a reactive dependency on both
