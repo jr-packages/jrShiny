@@ -6,9 +6,6 @@ move_files = function(chapter, dest) {
   fnames = list.files(path, full.names = TRUE)
   file.copy(fnames, file.path(dest, chapter))
 
-  ## Copy vignette, doesn't work
-  #path = system.file("doc", package = "jrShiny")
-  #file.copy(file.path(path, paste0(chapter, ".Rmd")), dest)
 }
 
 
@@ -17,20 +14,17 @@ move_files = function(chapter, dest) {
 #' A simple function for copying package files to users directory.
 #' @export
 create_project = function() {
-  dir.create("original", showWarnings = FALSE)
-  dir.create("exercises", showWarnings = FALSE)
-  move_files(chapter = 1, dest = "original")
-  move_files(1, dest = "exercises")
-  move_files(2, dest = "original")
-  move_files(2, dest = "exercises")
-  move_files(3, dest = "original")
-  move_files(3, dest = "exercises")
-  move_files(4, dest = "original")
-  move_files(4, dest = "exercises")
-  move_files(5, dest = "original")
-  move_files(5, dest = "exercises")
-  dir.create(file.path("exercises", "build_an_app"))
-  path = system.file("build_an_app", package = "jrShiny")
-  fnames = list.files(path, full.names = TRUE)
-  file.copy(fnames, file.path("exercises", "build_an_app"))
+  ## copy build an app
+  path_bap = system.file("build_an_app", package = "jrShiny")
+  file.copy(path_bap, ".", recursive = TRUE)
+  ## copy soultions
+  path_solutions = system.file("solutions", package = "jrShiny")
+  file.copy(path_solutions, to = ".", recursive = TRUE)
+  ## copy exercises
+  path_exercises = system.file("exercises", package = "jrShiny")
+  file.copy(path_exercises, to = ".", recursive = TRUE)
+  ## copy exercises into original
+  folders_to_original = list.files(path_exercises, full.names = TRUE)
+  dir.create("original")
+  file.copy(folders_to_original, "original", recursive = TRUE)
 }

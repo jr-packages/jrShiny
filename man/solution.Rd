@@ -10,7 +10,8 @@ solution(number = 1)
 \item{number}{The number of solution to open. Solution numbers are paired with exercises.}
 }
 \description{
-\code{solution} opens a solution file in your RStudio scripts pane and saves a copy of the file in your working directory.
+\code{solution} opens a solution file in your RStudio scripts pane
+and saves a copy of the file in your working directory.
 }
 \details{
 Heavily based on the code in the \code{reportsWS} package.

@@ -12,7 +12,7 @@ exercise(chapter, fname)
 \item{fname}{The filename}
 }
 \description{
-\code{exercise} opens an exercise file in your RStudio scripts pane and 
+\code{exercise} opens an exercise file in your RStudio scripts pane and
 saves a copy of the file in your working directory.
 }
 \details{
