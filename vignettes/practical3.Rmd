@@ -1,13 +1,15 @@
 ---
-title: "Chapter 3 Exercises"
-date: "`r Sys.Date()`"
+title: "Practical 3"
 author: "Jumping Rivers"
-output: html_vignette
+output:
+  tufte::tufte_handout:
+    latex_engine: xelatex
+  tufte::tufte_html: default
+vignette: >
+  %\VignetteIndexEntry{Practical 3}
+  \usepackage[utf8]{inputenc}
+  %\VignetteEngine{knitr::rmarkdown}
 ---
-<!--
-%\VignetteEngine{knitr::rmarkdown}
-%\VignetteIndexEntry{Chapter 3 Exercises}
--->
 
 ## Exercise 14
 

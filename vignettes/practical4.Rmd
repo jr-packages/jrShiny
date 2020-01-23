@@ -1,14 +1,15 @@
 ---
-title: "Chapter 4 Exercises"
-date: "`r Sys.Date()`"
+title: "Practical 4"
 author: "Jumping Rivers"
-output: html_vignette
+output:
+  tufte::tufte_handout:
+    latex_engine: xelatex
+  tufte::tufte_html: default
+vignette: >
+  %\VignetteIndexEntry{Practical 4}
+  \usepackage[utf8]{inputenc}
+  %\VignetteEngine{knitr::rmarkdown}
 ---
-<!--
-%\VignetteEngine{knitr::rmarkdown}
-%\VignetteIndexEntry{Chapter 4 Exercises}
--->
-
 ## Exercise 17: Layouts
 
   * Open `chapter4/layout_app1.R` and run.
