@@ -1,12 +1,16 @@
 ---
-title: "Chapter 1 Exercises"
+title: "Practical 1"
 author: "Jumping Rivers"
-output: html_vignette
+output:
+  tufte::tufte_handout:
+    latex_engine: xelatex
+  tufte::tufte_html: default
+vignette: >
+  %\VignetteIndexEntry{Practical 1}
+  \usepackage[utf8]{inputenc}
+  %\VignetteEngine{knitr::rmarkdown}
 ---
-<!--
-%\VignetteEngine{knitr::rmarkdown}
-%\VignetteIndexEntry{Chapter 1 Exercises}
--->
+
 
 ```{r echo=FALSE, message=FALSE}
 library("jrShiny")
