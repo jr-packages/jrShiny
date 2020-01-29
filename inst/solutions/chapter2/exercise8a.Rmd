@@ -1,0 +1,31 @@
+---
+title: "Exercise 8a Solutions"
+runtime: shiny
+---
+
+```{r echo=FALSE, message = FALSE}
+library("dplyr")
+library("plotly")
+library("DT")
+data(iris)
+actionButton("setosa","Setosa!")
+actionButton("versicolor", "Versicolor!")
+
+rvs = reactiveValues(data = iris)
+```
+
+```{r}
+observeEvent(input$setosa, {
+  rvs$data = filter(iris, Species == "setosa")
+})
+observeEvent(input$versicolor, {
+  rvs$data = filter(iris, Species == "versicolor")
+})
+```
+
+
+```{r}
+renderPlot({
+  plot(rvs$data$Petal.Width, rvs$data$Petal.Length)
+})
+```

@@ -1,0 +1,24 @@
+---
+title: "Exercise 10b solutions"
+runtime: shiny
+---
+
+```{r}
+## The UI
+sliderInput("n", "Sample size", 10, 50, 25)
+sliderInput("mean", "Sample mean", 0, 10, 5)
+```
+
+```{r, echo = FALSE}
+renderText({
+  max(rnorm(n = input$n, mean = input$mean))
+})
+renderPlot({
+  plot(rnorm(n = input$n, mean = input$mean))
+})
+# Problem is that the max number in renderText doesn't match up to the max number on the plot i.e. the two separate rnorm calls are generating different samples of data.
+```
+
+
+
+

@@ -1,0 +1,25 @@
+---
+title: "Exercise 10a solutions"
+runtime: shiny
+---
+```{r echo=FALSE, message=FALSE}
+library("ggplot2")
+library("tibble")
+sliderInput("n", "Sample size", min=10, max=50, value=25)
+sliderInput("n2", "Sample size", min=10, max=50, value=25)
+```
+
+```{r}
+renderText(input$n)
+renderText(input$n*2)
+renderText({
+  slider_sum = input$n + input$n2
+  paste0("The sum of both sliders is ", slider_sum)
+})
+renderPlot({
+  data_rand = enframe(rnorm(input$n))
+  ggplot(data_rand, aes(x = name, y = value)) + 
+    geom_point()
+  # or plot(rnorm(input$n))
+})
+```

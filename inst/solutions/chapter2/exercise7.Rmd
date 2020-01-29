@@ -1,0 +1,36 @@
+---
+title: "Exercise 7 Solutions"
+runtime: shiny
+---
+
+```{r echo=FALSE, message=FALSE}
+library("ggplot2")
+library("dplyr")
+data(iris)
+selectInput("flower_choice", "Choose your flower", 
+            choices = unique(iris$Species))
+```
+
+```{r, echo = FALSE}
+actionButton(inputId = "go", 
+             label = "Go!")
+selected = eventReactive(input$go, {
+  filter(iris, Species == input$flower_choice)
+})
+```
+
+```{r}
+renderText({
+  mean(selected()$Petal.Width)
+})
+```
+
+```{r}
+renderPlot({
+  ggplot(selected(), aes(x = Petal.Width, 
+                       y = Petal.Length)) +
+    geom_point()
+  # or
+  # plot(selected$Petal.Width, selected$Petal.Length)
+})
+```

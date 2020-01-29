@@ -1,0 +1,22 @@
+---
+title: "Exercise 3 Solutions"
+runtime: shiny
+---
+
+
+```{r}
+selectInput(inputId = "select", 
+            label = "Please select something", 
+            choices = c("Hello", "Bonjour", "Hallo"))
+sliderInput(inputId = "slider", 
+            label = "Please slide me!", 
+            min = 0, 
+            max = 10, 
+            value = 5)
+numericInput(inputId = "numeric", 
+             label = "Please enter a number",
+             value = 10)
+radioButtons(inputId = "radio", 
+             label = "Please select something", 
+             choices = c("Goodbye", "Au revoir", "Auf Wiedersehen"))
+```

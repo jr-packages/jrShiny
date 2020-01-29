@@ -1,0 +1,52 @@
+---
+title: "Exercise 11 solutions"
+runtime: shiny
+---
+
+```{r echo=FALSE}
+library("shiny")
+```
+
+
+```{r, echo = FALSE}
+## The UI
+sliderInput("n", "Sample size", 10, 50, 25)
+selectInput("dist", "Distribution", choices = c("Uniform", "Normal"))
+```
+
+```{r, echo = FALSE}
+get_data = function(n, dist) {
+  if(dist=="Uniform"){
+   data = runif(n) 
+  }
+  else {
+    data = rnorm(n)
+  }
+  return(data)
+}
+
+data = reactive({
+  get_data(input$n, input$dist)
+})
+
+# or you can just do it using the reactive() only
+# data = reactive({
+#   if (input$dist == "Uniform") {
+#       runif(input$n)
+#   }
+#   else {
+#     rnorm(input$n)
+#   }
+# })
+
+renderPlot({
+  plot(data())
+})
+renderText({
+  max(data())
+})
+```
+
+
+
+

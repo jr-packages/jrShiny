@@ -1,0 +1,22 @@
+---
+title: "Exercise 4 solutions"
+runtime: shiny
+---
+```{r}
+## The UI
+sliderInput("n", "Sample size", min=10, max=50, value=25)
+```
+
+```{r, message=FALSE}
+# the message=FALSE chunk option stops the messages from the library() command printing after we knit
+library("ggplot2")
+renderText(input$n)
+
+renderPlot({
+  ggplot(data.frame(x = 1:input$n, 
+                    y = runif(input$n)), 
+         aes(x = x, y = y)) + 
+    geom_point()
+  ## or plot(runif(input$n))
+})
+```

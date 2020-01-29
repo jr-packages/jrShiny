@@ -1,0 +1,14 @@
+---
+title: "Exercise 2 Solutions"
+runtime: shiny
+---
+
+#### Make the code chunk display but not run
+```{r, eval = FALSE}
+1 + 1
+```
+
+#### Make the code run but not display
+```{r, echo = FALSE}
+1 + 1
+```

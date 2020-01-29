@@ -1,0 +1,48 @@
+---
+title: "Exercise 8c Solutions"
+runtime: shiny
+---
+
+```{r echo=FALSE, message = FALSE}
+library("dplyr")
+library("plotly")
+library("DT")
+data(iris)
+actionButton("setosa","Setosa!")
+actionButton("versicolor", "Versicolor!")
+
+rvs = reactiveValues(data = iris)
+```
+
+```{r}
+observeEvent(input$setosa, {
+  rvs$data = filter(iris, Species == "setosa")
+})
+observeEvent(input$versicolor, {
+  rvs$data = filter(iris, Species == "versicolor")
+})
+```
+
+
+```{r}
+renderPlot({
+  ggplot2(rvs$data, aes(x = Petal.Width, 
+                        y = Petal.Length)) + 
+    geom_point()
+})
+renderPlotly({
+  g = ggplot2(rvs$data, aes(x = Petal.Width, 
+                        y = Petal.Length)) + 
+    geom_point()
+  ggplotly(g)
+})
+```
+
+```{r}
+renderTable({
+  rvs$data
+})
+renderDT({
+  datatable(rvs$data)
+})
+```

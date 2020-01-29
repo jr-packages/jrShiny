@@ -1,0 +1,31 @@
+---
+title: "Exercise 13 Solutions"
+runtime: shiny
+---
+
+```{r, echo = FALSE, message=FALSE}
+library("ggplot2")
+library("tibble")
+## The UI
+sliderInput("n", "Sample size", 10, 50, 25)
+actionButton("uniform", "Uniform")
+actionButton("normal", "Normal")
+rvs = reactiveValues(data = enframe(1:10))
+```
+
+```{r}
+observeEvent(input$uniform, {
+  rvs$data = enframe(runif(input$n))
+})
+observeEvent(input$normal, {
+  rvs$data = enframe(rnorm(input$n))
+})
+renderPlot({
+  ggplot(rvs$data, aes(x = name, y = value)) +
+    geom_point()
+})
+```
+
+
+
+
