@@ -1,7 +1,7 @@
 Type: Package
 Package: jrShiny
 Title: R Shiny Exercises
-Version: 1.2.8
+Version: 1.2.802
 Authors@R: 
     person(given = "Jumping",
            family = "Rivers",
@@ -39,7 +39,8 @@ Suggests:
     sparkline,
     svglite,
     svgPanZoom,
-    testthat
+    testthat,
+    tufte
 VignetteBuilder: 
     knitr
 Encoding: UTF-8

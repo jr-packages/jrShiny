@@ -4,15 +4,8 @@
 \alias{setnicepar}
 \title{Sets par parameters}
 \usage{
-setnicepar(
-  mar = c(3, 3, 2, 1),
-  mgp = c(2, 0.4, 0),
-  tck = -0.01,
-  cex_axis = 0.9,
-  las = 1,
-  mfrow = c(1, 1),
-  ...
-)
+setnicepar(mar = c(3, 3, 2, 1), mgp = c(2, 0.4, 0), tck = -0.01,
+  cex_axis = 0.9, las = 1, mfrow = c(1, 1), ...)
 }
 \arguments{
 \item{mar}{Distance to edge}
