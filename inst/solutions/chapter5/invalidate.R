@@ -20,8 +20,8 @@ server = function(input, output, session) {
     invalidateLater(5000, session)
     # the plot has a reactive dependency on both
     # n and the invalidation timer
-    rows_to_sample = sample(1:nrow(movies), size = 50)
-    movies[rows_to_sample,]
+    rows_to_sample = sample(seq_len(nrow(movies)), size = 50)
+    movies[rows_to_sample, ]
   })
   output$scatter = renderPlot({
     d = dat()
