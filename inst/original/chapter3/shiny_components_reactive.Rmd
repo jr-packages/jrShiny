@@ -14,22 +14,22 @@ library(flexdashboard)
 library("ggplot2movies")
 library(ggplot2)
 library(flexdashboard)
-data(movies, package="ggplot2movies")
-movies = movies[!is.na(movies$budget) & movies$budget > 0,]
+data(movies, package = "ggplot2movies")
+movies = movies[!is.na(movies$budget) & movies$budget > 0, ]
 top_movies = movies[order(-movies$rating), c("title", "year", "budget", "rating", "Romance", "Action", "Animation"), ]
-colnames(top_movies)  = c("Title", "Year", "Budget", "Rating","Romance", "Action", "Animation")
+colnames(top_movies)  = c("Title", "Year", "Budget", "Rating", "Romance", "Action", "Animation")
 theme_set(theme_bw())
-setnicepar = function(mar=c(3,3,2,1), 
-         mgp=c(2,0.4,0), tck=-.01,
-         cex.axis=0.9, las=1, mfrow=c(1,1),...) {
-  par(mar=mar, 
-      mgp=mgp, tck=tck,
-      cex.axis=cex.axis, las=las,mfrow=mfrow,...)
+setnicepar = function(mar = c(3, 3, 2, 1), 
+         mgp = c(2, 0.4, 0), tck = -.01,
+         cex.axis = 0.9, las = 1, mfrow = c(1, 1), ...) {
+  par(mar = mar, 
+      mgp = mgp, tck = tck,
+      cex.axis = cex.axis, las = las, mfrow = mfrow, ...)
 }
 
-t_m = reactive(top_movies[top_movies[input$movie_type]==1,])
-years = reactive(movies[movies$year > 1929 & movies[input$movie_type]==1,])
-an = reactive(movies[movies[input$movie_type]==1,])
+t_m = reactive(top_movies[top_movies[input$movie_type] == 1, ])
+years = reactive(movies[movies$year > 1929 & movies[input$movie_type] == 1, ])
+an = reactive(movies[movies[input$movie_type] == 1, ])
 ```
 
 
@@ -53,13 +53,17 @@ Column {.tabset .tabset-fade}
 ### Top 10 movies (static)
 
 ```{r}
-renderTable({t_m()[1:10, 1:4]})
+renderTable({
+  t_m()[1:10, 1:4]
+  })
 ```
 
 ### Top 10 movies (dynamic)
 
 ```{r}
-DT::renderDataTable({DT::datatable(t_m()[,1:4], rownames = FALSE)})
+DT::renderDataTable({
+  DT::datatable(t_m()[, 1:4], rownames = FALSE)
+  })
 ```
 
 
@@ -71,9 +75,9 @@ Base graphics
 ```{r}
 renderPlot({
 setnicepar()
-plot(an()$rating, an()$length, ylab="Length", xlab="Rating", 
-      pch=21, bg="steelblue", ylim=c(0, max(an()$length)), 
-     xlim=c(1, 10), main=paste0(input$movie_type, " movies"))
+plot(an()$rating, an()$length, ylab = "Length", xlab = "Rating", 
+      pch = 21, bg = "steelblue", ylim = c(0, max(an()$length)), 
+     xlim = c(1, 10), main = paste0(input$movie_type, " movies"))
 grid()
 })
 ```
@@ -83,8 +87,8 @@ grid()
 ```{r}
 renderPlot({
   setnicepar()
-  hist(an()$length, breaks="fd", col="steelblue", xlab="Movie Length", 
-      main="Histogram of movie length", xlim=c(0, max(an()$length)))
+  hist(an()$length, breaks = "fd", col = "steelblue", xlab = "Movie Length", 
+      main = "Histogram of movie length", xlim = c(0, max(an()$length)))
   grid()
 })
 ```
@@ -103,7 +107,7 @@ of terrible movies.
 library(plotly)
 renderPlotly({
 g = ggplot(an(), aes(length, rating)) + 
-  geom_point(size=0.5, aes(text=paste("Film: ", title))) + 
+  geom_point(size = 0.5, aes(text = paste("Film: ", title))) + 
   xlab("Length") + ylab("Rating") + 
   ylim(c(0, 10)) 
 ggplotly(g)
@@ -114,8 +118,8 @@ ggplotly(g)
 
 ```{r}
 renderValueBox({
-  valueBox(sum(an()$rating <3), icon = "ion-videocamera", caption="Movies Rated less than 3", 
-         color="red")
+  valueBox(sum(an()$rating < 3), icon = "ion-videocamera", caption = "Movies Rated less than 3", 
+         color = "red")
 })
 ```
 
@@ -132,10 +136,10 @@ in R.
 library(dygraphs)
 renderDygraph({
 rat_by_year = tapply(years()$rating, years()$year, mean)
-x = ts(as.vector(rat_by_year), start=1930)
-y = cbind(Rating=x)
+x = ts(as.vector(rat_by_year), start = 1930)
+y = cbind(Rating = x)
 dygraph(y, main = "Ratings over the years", 
-        ylab = "Ratings", group="Ratings") %>% 
+        ylab = "Ratings", group = "Ratings") %>% 
   dyRangeSelector() %>%
    dyOptions(stepPlot = TRUE) %>%
   dySeries("V1", label = "Rating")
@@ -148,10 +152,10 @@ dygraph(y, main = "Ratings over the years",
 library(dygraphs)
 renderDygraph({
 num_by_year = tapply(years()$rating, years()$year, sum)
-x = ts(as.vector(num_by_year), start=1930)
-y = cbind(Rating=x)
+x = ts(as.vector(num_by_year), start = 1930)
+y = cbind(Rating = x)
 dygraph(y, main = "Number of movies over the years", 
-        ylab = "No. of movies",group="Ratings") %>% 
+        ylab = "No. of movies", group = "Ratings") %>% 
   dyRangeSelector() %>%
    dyOptions(stepPlot = TRUE) %>%
   dySeries("V1", label = "No. of Movies made")

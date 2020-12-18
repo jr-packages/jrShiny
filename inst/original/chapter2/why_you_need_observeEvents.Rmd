@@ -15,9 +15,9 @@ actionButton("norm", "Normal")
 actionButton("unif", "Uniform")
 ## Reactive dependencies are dynamic
 rv1 = reactive({
-  if(input$norm) {
+  if (input$norm) {
     rnorm(100)
-  } else if(input$unif){
+  } else if (input$unif) {
     runif(100)
   } else {
     rnorm(100)
@@ -37,9 +37,15 @@ Combine `reactiveValues` and `observeEvents`.
 ```{r echo=FALSE}
 rv2 = reactiveValues(data = rnorm(100))
 
-observeEvent(input$norm, {rv2$data = rnorm(100)})
-observeEvent(input$unif, {rv2$data = runif(100)})
-renderPlot({plot(rv2$data)})
+observeEvent(input$norm, {
+  rv2$data = rnorm(100)
+  })
+observeEvent(input$unif, {
+  rv2$data = runif(100)
+  })
+renderPlot({
+  plot(rv2$data)
+  })
 ```
 
 

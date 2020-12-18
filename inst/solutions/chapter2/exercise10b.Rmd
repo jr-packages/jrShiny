@@ -16,7 +16,8 @@ renderText({
 renderPlot({
   plot(rnorm(n = input$n, mean = input$mean))
 })
-# Problem is that the max number in renderText doesn't match up to the max number on the plot i.e. the two separate rnorm calls are generating different samples of data.
+# Problem is that the max number in renderText doesn't match up to the max number on the plot
+# i.e. the two separate rnorm calls are generating different samples of data.
 ```
 
 

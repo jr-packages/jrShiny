@@ -9,7 +9,9 @@ data(iris)
 selectInput("flower_choice", "Choose your flower", 
             choices = unique(iris$Species))
 
-## unique(iris$species) is grabbing the unique values from the Species column in the iris data set. We are therefore giving the user the option to select between the different values of Species.
+## unique(iris$species) is grabbing the unique values from the Species column in the iris data
+## set. We are therefore giving the user the option to select between the different values of
+## Species.
 ```
 
 ```{r}

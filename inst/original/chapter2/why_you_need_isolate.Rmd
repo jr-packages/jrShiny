@@ -16,12 +16,14 @@ actionButton("go", "Plot it!")
 
 rv = reactiveValues(data = rnorm(100))
 observeEvent(input$go, {
-  if(input$dist=="Normal") rv$data = rnorm(input$n)
+  if (input$dist == "Normal") rv$data = rnorm(input$n)
   else rv$data = runif(input$n)
 })
 
 ## The plot title changes with the slider.
-renderPlot({plot(rv$data, main=paste("Sample size: ", input$n))})
+renderPlot({
+  plot(rv$data, main = paste("Sample size: ", input$n))
+  })
 ```
 
 
@@ -30,6 +32,8 @@ renderPlot({plot(rv$data, main=paste("Sample size: ", input$n))})
 Use `isolate` to remove `input$n` from the dependency tree.
 
 ```{r echo=FALSE}
-renderPlot({plot(rv$data, 
-                 main=paste("Sample size: ", isolate(input$n)))})
+renderPlot({
+  plot(rv$data,
+       main = paste("Sample size: ", isolate(input$n)))
+  })
 ```

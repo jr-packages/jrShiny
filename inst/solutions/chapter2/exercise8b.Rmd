@@ -8,7 +8,7 @@ library("dplyr")
 library("plotly")
 library("DT")
 data(iris)
-actionButton("setosa","Setosa!")
+actionButton("setosa", "Setosa!")
 actionButton("versicolor", "Versicolor!")
 
 rvs = reactiveValues(data = iris)

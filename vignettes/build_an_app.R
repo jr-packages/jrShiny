@@ -20,4 +20,3 @@
 
 ## ---- eval = FALSE------------------------------------------------------------
 #  movies_new[movies_new$year > input$id_of_widget[1] & movies_new$year < input$id_of_widget[2]]
-

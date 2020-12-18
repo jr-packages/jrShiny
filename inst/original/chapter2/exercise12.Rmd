@@ -17,7 +17,7 @@ actionButton("plot", "Plot it")
 
 ```{r echo=FALSE}
 get_data = function(n, dist) {
-  if(dist=="Uniform") runif(n)
+  if (dist == "Uniform") runif(n)
   else rnorm(n)
 }
 

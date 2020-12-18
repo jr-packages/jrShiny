@@ -1,7 +1,7 @@
 Type: Package
 Package: jrShiny
 Title: Jumping Rivers: Interactive Graphics with Shiny
-Version: 1.2.803
+Version: 1.3.0
 Authors@R: 
     person(given = "Jumping",
            family = "Rivers",

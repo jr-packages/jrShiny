@@ -4,7 +4,7 @@ runtime: shiny
 
 ```{r echo=FALSE}
 data(iris)
-actionButton("setosa","Setosa!")
+actionButton("setosa", "Setosa!")
 actionButton("versicolor", "Versicolor!")
 
 rvs = reactiveValues(data = iris)

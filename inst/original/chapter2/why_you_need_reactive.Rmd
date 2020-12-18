@@ -34,6 +34,10 @@ Create a `reactive` object that each plot can access.
 
 ```{r, echo=1}
 x = reactive(rnorm(input$num1))
-renderPlot({plot(x())})
-renderPlot({plot(x())})
+renderPlot({
+  plot(x())
+  })
+renderPlot({
+  plot(x())
+  })
 ```

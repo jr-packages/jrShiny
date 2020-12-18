@@ -10,14 +10,14 @@ selectInput("flower_choice", "Choose your flower",
 
 ```{r}
 renderText({
-  selected = iris[iris$Species == input$flower_choice,]
+  selected = iris[iris$Species == input$flower_choice, ]
   mean(selected$Petal.Width)
 })
 ```
 
 ```{r}
 renderPlot({
-  selected = iris[iris$Species == input$flower_choice,]
+  selected = iris[iris$Species == input$flower_choice, ] 
   plot(selected$Petal.Width, selected$Petal.Length)
 })
 ```

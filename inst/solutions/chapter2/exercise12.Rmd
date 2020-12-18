@@ -18,7 +18,7 @@ actionButton("plot", "Plot it")
 
 ```{r echo=FALSE}
 get_data = function(n, dist) {
-  if(dist=="Uniform"){
+  if (dist == "Uniform") {
    data = runif(n) 
   }
   else {
@@ -27,7 +27,7 @@ get_data = function(n, dist) {
   return(data)
 }
 
-data = eventReactive(input$plot {
+data = eventReactive(input$plot, {
   get_data(input$n, input$dist)
 })
 

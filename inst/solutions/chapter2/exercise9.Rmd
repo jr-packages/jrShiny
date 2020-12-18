@@ -4,7 +4,7 @@ runtime: shiny
 ---
 
 ```{r echo=FALSE}
-sliderInput("n", "Sample size", min=10, max=50, value=25)
+sliderInput("n", "Sample size", min = 10, max = 50, value = 25)
 ```
 ```{r echo=FALSE}
 ## Arguments: id, code to execute on the server
@@ -12,5 +12,6 @@ observeEvent(input$n, {
   print(input$n)
   }
 )
-## The value of input$n is printed to the Rmarkdown tab. Using print statements is a great debugging tool when your app starts to get more complicated.
+## The value of input$n is printed to the Rmarkdown tab. Using print statements is a great
+## debugging tool when your app starts to get more complicated.
 ```

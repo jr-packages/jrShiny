@@ -14,7 +14,9 @@ sliderInput("n", "Sample size", 10, 50, 25)
 ```
 
 ```{r}
-renderPlot({plot(rnorm(input$n))})
+renderPlot({
+  plot(rnorm(input$n))
+  })
 ```
 
 
