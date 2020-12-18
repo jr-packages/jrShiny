@@ -1,6 +1,6 @@
 Type: Package
 Package: jrShiny
-Title: R Shiny Exercises
+Title: Jumping Rivers: Interactive Graphics with Shiny
 Version: 1.2.803
 Authors@R: 
     person(given = "Jumping",
