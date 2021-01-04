@@ -23,7 +23,6 @@ Imports:
     shinydashboard,
     utils
 Suggests:
-    d3heatmap,
     drat,
     dygraphs,
     edgebundleR,
