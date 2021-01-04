@@ -2,3 +2,4 @@
 
   * Add NEWS.md
   * Fix lint errors
+  * Add libgit2-dev dep to travis.yml
