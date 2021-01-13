@@ -17,7 +17,7 @@ library("ggplot2")
 
 ## Subset of the ggplot2movies data set
 data(movies, package = "jrShiny")
-top_movies = movies[order(-movies$rating), 
+top_movies = movies[order(-movies$rating),
                     c("title", "year", "budget", "rating", "Romance", "Action", "Animation"), ]
 colnames(top_movies) = c("Title", "Year", "Budget", "Rating", "Romance", "Action", "Animation")
 theme_set(theme_bw())
@@ -30,7 +30,7 @@ Select the movie genre to display
 
 ```{r}
 ## The shiny part
-selectInput("movie_type", label = "Movie genre", 
+selectInput("movie_type", label = "Movie genre",
             c("Romance", "Action", "Animation"))
 ```
 
@@ -43,7 +43,7 @@ Column {.tabset .tabset-fade}
 
 
 ```{r}
-## Exercise for the reader!: 
+## Exercise for the reader!:
 ## t_m is calculated twice, bad....
 ## Use reactive to avoid duplication
 renderTable({
@@ -69,9 +69,9 @@ Base graphics
 ```{r}
 renderPlot({
   an = movies[movies[input$movie_type] == 1, ]
-  jrShiny::setnicepar() 
-  plot(an$rating, an$length, ylab = "Length", xlab = "Rating", 
-       pch = 21, bg = "steelblue", ylim = c(0, max(an$length)), 
+  jrShiny::setnicepar()
+  plot(an$rating, an$length, ylab = "Length", xlab = "Rating",
+       pch = 21, bg = "steelblue", ylim = c(0, max(an$length)),
        xlim = c(1, 10), main = paste0(input$movie_type, " movies"))
   grid()
 })
@@ -83,7 +83,7 @@ renderPlot({
 renderPlot({
   an = movies[movies[input$movie_type] == 1, ]
   jrShiny::setnicepar()
-  hist(an$length, breaks = "fd", col = "steelblue", xlab = "Movie Length", 
+  hist(an$length, breaks = "fd", col = "steelblue", xlab = "Movie Length",
        main = "Histogram of movie length", xlim = c(0, max(an$length)))
   grid()
 })
@@ -103,10 +103,10 @@ of terrible movies.
 library(plotly)
 renderPlotly({
   an = movies[movies[input$movie_type] == 1, ]
-  g = ggplot(an, aes(length, rating)) + 
-    geom_point(size = 0.5, aes(text = paste("Film: ", title))) + 
-    xlab("Length") + ylab("Rating") + 
-    ylim(c(0, 10)) 
+  g = ggplot(an, aes(length, rating)) +
+    geom_point(size = 0.5, aes(text = paste("Film: ", title))) +
+    xlab("Length") + ylab("Rating") +
+    ylim(c(0, 10))
   ggplotly(g)
 })
 ```
@@ -116,7 +116,7 @@ renderPlotly({
 ```{r}
 renderValueBox({
   an = movies[movies[input$movie_type] == 1, ]
-  valueBox(sum(an$rating < 3), icon = "ion-videocamera", 
+  valueBox(sum(an$rating < 3), icon = "ion-videocamera",
            caption = "Movies Rated less than 3", color = "red")
 })
 ```
@@ -135,11 +135,11 @@ library(dygraphs)
 renderDygraph({
   years = movies[movies$year > 1929 & movies[input$movie_type] == 1, ]
   rat_by_year = tapply(years$rating, years$year, mean)
-  
+
   x = ts(as.vector(rat_by_year), start = 1930)
   y = cbind(Rating = x)
-  dygraph(y, main = "Ratings over the years", 
-          ylab = "Ratings", group = "Ratings") %>% 
+  dygraph(y, main = "Ratings over the years",
+          ylab = "Ratings", group = "Ratings") %>%
     dyRangeSelector() %>%
     dyOptions(stepPlot = TRUE) %>%
     dySeries("V1", label = "Rating")
@@ -156,10 +156,10 @@ renderDygraph({
   ## Create ts object
   x = ts(as.vector(num_by_year), start = 1930)
   y = cbind(Rating = x)
-  
+
   ## Plot code
-  dygraph(y, main = "Number of movies over the years", 
-          ylab = "No. of movies", group = "Ratings") %>% 
+  dygraph(y, main = "Number of movies over the years",
+          ylab = "No. of movies", group = "Ratings") %>%
     dyRangeSelector() %>%
     dyOptions(stepPlot = TRUE) %>%
     dySeries("V1", label = "No. of Movies made")

@@ -32,11 +32,11 @@ renderPlot({
   type = movies[, input$movie_type] == 1
   x = movies$rating[movies$year >= input$year[1] &  movies$year <= input$year[2]]
   y = movies$length[movies$year >= input$year[1] &  movies$year <= input$year[2]]
-  
-  plot(x,  y, 
-       xlab = "Rating", ylab = "Length", 
-       xlim = c(1, 10), ylim = c(0, 400), 
-       pch = 21, cex = 1, 
+
+  plot(x,  y,
+       xlab = "Rating", ylab = "Length",
+       xlim = c(1, 10), ylim = c(0, 400),
+       pch = 21, cex = 1,
        bg = factor(type), col = NA)
   grid()
 })

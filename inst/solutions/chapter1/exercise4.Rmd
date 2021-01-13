@@ -13,9 +13,9 @@ library("ggplot2")
 renderText(input$n)
 
 renderPlot({
-  ggplot(data.frame(x = 1:input$n, 
-                    y = runif(input$n)), 
-         aes(x = x, y = y)) + 
+  ggplot(data.frame(x = 1:input$n,
+                    y = runif(input$n)),
+         aes(x = x, y = y)) +
     geom_point()
   ## or plot(runif(input$n))
 })

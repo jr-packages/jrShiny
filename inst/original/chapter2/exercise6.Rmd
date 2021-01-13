@@ -4,7 +4,7 @@ runtime: shiny
 
 ```{r echo=FALSE}
 data(iris)
-selectInput("flower_choice", "Choose your flower", 
+selectInput("flower_choice", "Choose your flower",
             choices = unique(iris$Species))
 ```
 

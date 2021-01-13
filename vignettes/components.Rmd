@@ -136,8 +136,3 @@ dygraph(y, main = "Number of movies over the years",
    dyOptions(stepPlot = TRUE) %>%
   dySeries("V1", label = "No. of Movies made")
 ```
-
-
-
-
-

@@ -26,13 +26,13 @@ observeEvent(input$versicolor, {
 
 ```{r}
 renderPlot({
-  ggplot2(rvs$data, aes(x = Petal.Width, 
-                        y = Petal.Length)) + 
+  ggplot2(rvs$data, aes(x = Petal.Width,
+                        y = Petal.Length)) +
     geom_point()
 })
 renderPlotly({
-  g = ggplot2(rvs$data, aes(x = Petal.Width, 
-                        y = Petal.Length)) + 
+  g = ggplot2(rvs$data, aes(x = Petal.Width,
+                        y = Petal.Length)) +
     geom_point()
   ggplotly(g)
 })

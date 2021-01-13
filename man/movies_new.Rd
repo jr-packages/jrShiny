@@ -4,7 +4,9 @@
 \name{movies_new}
 \alias{movies_new}
 \title{Updated movies data}
-\format{A data frame}
+\format{
+A data frame
+}
 \description{
 Taken from kaggle
 }

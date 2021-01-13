@@ -4,7 +4,9 @@
 \name{movies}
 \alias{movies}
 \title{Data from the IMDB movie data base}
-\format{A data frame}
+\format{
+A data frame
+}
 \description{
 Taken from the package ggplot2movies. Only included movies with a known
 budget

@@ -7,7 +7,7 @@ runtime: shiny
 library("ggplot2")
 library("dplyr")
 data(iris)
-selectInput("flower_choice", "Choose your flower", 
+selectInput("flower_choice", "Choose your flower",
             choices = unique(iris$Species))
 ```
 
@@ -25,7 +25,7 @@ renderText({
 
 ```{r}
 renderPlot({
-  ggplot(selected(), aes(x = Petal.Width, 
+  ggplot(selected(), aes(x = Petal.Width,
                        y = Petal.Length)) +
     geom_point()
   # or

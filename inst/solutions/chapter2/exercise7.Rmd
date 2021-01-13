@@ -7,12 +7,12 @@ runtime: shiny
 library("ggplot2")
 library("dplyr")
 data(iris)
-selectInput("flower_choice", "Choose your flower", 
+selectInput("flower_choice", "Choose your flower",
             choices = unique(iris$Species))
 ```
 
 ```{r, echo = FALSE}
-actionButton(inputId = "go", 
+actionButton(inputId = "go",
              label = "Go!")
 selected = eventReactive(input$go, {
   filter(iris, Species == input$flower_choice)
@@ -27,7 +27,7 @@ renderText({
 
 ```{r}
 renderPlot({
-  ggplot(selected(), aes(x = Petal.Width, 
+  ggplot(selected(), aes(x = Petal.Width,
                        y = Petal.Length)) +
     geom_point()
   # or

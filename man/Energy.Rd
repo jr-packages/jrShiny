@@ -4,7 +4,9 @@
 \name{Energy}
 \alias{Energy}
 \title{Energy}
-\format{A data frame}
+\format{
+A data frame
+}
 \description{
 Energy
 }

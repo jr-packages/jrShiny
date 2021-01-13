@@ -18,7 +18,7 @@ renderText({
 })
 renderPlot({
   data_rand = enframe(rnorm(input$n))
-  ggplot(data_rand, aes(x = name, y = value)) + 
+  ggplot(data_rand, aes(x = name, y = value)) +
     geom_point()
   # or plot(rnorm(input$n))
 })

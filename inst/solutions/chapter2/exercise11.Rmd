@@ -17,7 +17,7 @@ selectInput("dist", "Distribution", choices = c("Uniform", "Normal"))
 ```{r, echo = FALSE}
 get_data = function(n, dist) {
   if (dist == "Uniform") {
-   data = runif(n) 
+   data = runif(n)
   }
   else {
     data = rnorm(n)

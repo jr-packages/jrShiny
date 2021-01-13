@@ -59,6 +59,3 @@ Interesting widgets, but aimed at a particular market.
   * [radarchart](https://cran.rstudio.com/web/packages/radarchart/): Radar Chart from Chart.js
   * [rchess](https://cran.rstudio.com/web/packages/rchess/): R package for chess validations!
   * [treescape](https://cran.rstudio.com/web/packages/treescape/): Statistical Exploration of Landscapes of Phylogenetic Trees
-  
-  
-  
